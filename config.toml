@@ -1,0 +1,68 @@
+## Basic Configuration
+
+baseurl = "localhost" 
+builddrafts = false
+canonifyurls = false
+languageCode = "en-US"
+
+contentdir = "content"
+layoutdir = "layouts"
+publishDir = "docs"
+
+author = "Oleksandr Stefanovskyi"
+title = "Oleksandr Stefanovskyi"
+
+theme = "hugo-goa"
+
+## Hugo Built-in Features
+#disqusShortname = "https-shenoybr-github-io-hugo-goa-demo" # Comment out to disable Disqus.
+googleAnalytics = "XYZ"
+enableRobotsTXT = true
+
+## Site Settings
+[params]
+author = "Oleksandr Stefanovskyi"
+intro = "Software Engineer"
+description = "Skilled software engineer with proven experience in using new tools and technical developments to drive improvements throughout an entire development lifecycle. Developing software solution with microservice architecture using TDD methodology, from requirements definition through successful deployment."
+authorimage = "headshot.jpg"
+dateformat = "November 15, 2018"
+
+## Site Meta Settings
+[params.meta]
+description = "Simple minimalist theme"
+keywords = "minimalist,blog,goa,hugo,developer"
+
+## Social Accounts
+[params.social]
+github = "astefanovskiy"
+instagram = "stefanovskyi"
+#xing = "<username>"
+linkedin = "oleksandr-stefanovskyi"
+#twitter = "<username>"
+facebook = "stefanovskyi"
+#google = "<username>"
+stackoverflow = "2701230/oleksandr-stefanovskyi"
+email = "oleksandr.stefanovskyi@gmail.com"
+
+## Extras
+[params.extra]
+copyright = "© 2018. Oleksandr Stefanovskyi"
+poweredby = false
+highlightjs = true
+
+## Main Menu
+[[menu.main]]
+    name = "blog"
+    weight = 100
+    identifier = "blog"
+    url = "http://blog.stefanovskyi.com/"
+[[menu.main]]
+    name = "cv"
+    identifier = "cv"
+    weight = 200
+    url = "http://cv.stefanovskyi.com/"
+#[[menu.main]]
+#    name = "coderag"
+#    identifier = "coderag"
+#    weight = 300
+#    url = "/coderag/"

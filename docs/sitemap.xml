@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>localhost/categories/</loc>
+    <loc>stefanovskyi.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>localhost/</loc>
+    <loc>stefanovskyi.com/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>localhost/tags/</loc>
+    <loc>stefanovskyi.com/tags/</loc>
     <priority>0</priority>
   </url>
   

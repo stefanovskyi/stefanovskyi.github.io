@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     
-	<atom:link href="astefanovskiy.github.io/stefanovskyi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="./index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

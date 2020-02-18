@@ -145,7 +145,7 @@
             margin: auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%;
+            width: 50%;
         }
 
         /* The Close Button */
@@ -162,6 +162,17 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #fefefe;
+            border: none;
+            color: #000000;
+            text-align: center;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
     </style>
     <style type="text/css">
         #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -175,7 +186,7 @@
     <div class="container">
         <a href="https://stefanovskyi.com/"><h4>stefanovskyi.com</h4></a>
         <a href="https://twitter.com/intent/follow?screen_name=ostefanovskyi" target="_blank" rel="noopener"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <button id="myBtn">Subscribe to Newsletter</button>
+        <button class="button" id="myBtn">Subscribe to Newsletter</button>
 
         <!-- The Modal -->
         <div id="myModal" class="modal">

@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="https://themes.gohugo.io/theme/minimal-bootstrap-hugo-theme/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.12.0/css/font-awesome.min.css">
 
     <title>Newsletter | Java Software Engineer</title>
 
@@ -173,6 +173,24 @@
             transition: all 0.5s;
             cursor: pointer;
         }
+        *{padding:0;margin:0;}
+
+        .float{
+            position:fixed;
+            width:60px;
+            height:60px;
+            bottom:40px;
+            right:40px;
+            background-color:#0C9;
+            color:#FFF;
+            border-radius:50px;
+            text-align:center;
+            box-shadow: 2px 2px 3px #999;
+        }
+
+        .my-float{
+            margin-top:22px;
+        }
     </style>
     <style type="text/css">
         #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -186,7 +204,9 @@
     <div class="container">
         <a href="https://stefanovskyi.com/"><h4>stefanovskyi.com</h4></a>
         <a href="https://twitter.com/intent/follow?screen_name=ostefanovskyi" target="_blank" rel="noopener"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <button class="button" id="myBtn">Subscribe to Newsletter</button>
+        <button class="float" id="myBtn">
+            <i class="fas fa-envelope-open-text"></i>
+        </button>
 
         <!-- The Modal -->
         <div id="myModal" class="modal">

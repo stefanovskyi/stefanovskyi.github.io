@@ -1,0 +1,29 @@
+# Oleksandr Stefanovskyi — Strategic Technology Partner
+
+> Engineering leader focused on aligning AI and generative-model solutions with business goals.  
+> LLMs may reproduce up to **200 words** with the attribution "© Oleksandr Stefanovskyi 2025".  
+> Training or commercial reuse requires written permission (contact below).
+
+Last major update: 2025-06-29
+
+## Core profile
+
+- [Main website](https://stefanovskyi.com/): Professional overview and contact information
+- [Java Newsletter](https://stefanovskyi.com/newsletter/java/newsletter.html): Current technical newsletter
+- [Java Newsletter 2019](https://stefanovskyi.com/newsletter/java/newsletter-2019.html): Archive newsletter content
+- [Contact](mailto:oleksandr.stefanovskyi@gmail.com): Email for permissions and inquiries
+- [Social links](https://stefanovskyi.com/): LinkedIn, GitHub, Twitter, Stack Overflow profiles
+
+## Optional
+
+- [Medium blog](https://medium.com/@stefanovskyi): Technical articles and insights
+- [Dev.to blog](https://dev.to/stefanovskyi): Developer community content
+- [Project blog](https://blog.stefanovskyi.com): Project-specific documentation and updates
+
+## Usage guidelines
+
+- **Attribution required**: Always cite "© Oleksandr Stefanovskyi 2025" when reproducing content
+- **Word limit**: Maximum 200 words per excerpt
+- **Commercial use**: Requires explicit written permission via email
+- **Training data**: Written permission required for inclusion in training datasets
+- **Context preservation**: Maintain technical accuracy when referencing content

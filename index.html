@@ -87,14 +87,28 @@
         </section>
 
         <section id="main-menu-pane" class="row text-center main-menu">
-            <h4 id="medium-blog"><a class="menu-item" href="https://medium.com/@stefanovskyi" target="_blank" rel="noopener">Blog on Medium</a></h4>
-            <h4 id="devto-blog"><a class="menu-item" href="https://dev.to/stefanovskyi" target="_blank" rel="noopener">Blog on Dev.to</a></h4>
-            <h4 id="java-newsletter"><a class="menu-item" href="newsletter.html">Java Newsletter [Jul 1, 2019 - May 24, 2020]</a></h4>
+            <h4 id="blogs-toggle" class="menu-item" style="cursor: pointer;">Blogs</h4>
+            <div id="blogs-links" style="display: none;">
+                <h4 id="personal-blog"><a class="menu-item" href="https://blog.stefanovskyi.com" target="_blank" rel="noopener">Personal Blog</a></h4>
+                <h4 id="medium-blog"><a class="menu-item" href="https://medium.com/@stefanovskyi" target="_blank" rel="noopener">Medium</a></h4>
+                <h4 id="devto-blog"><a class="menu-item" href="https://dev.to/stefanovskyi" target="_blank" rel="noopener">Dev.to</a></h4>
+                <h4 id="java-newsletter"><a class="menu-item" href="newsletter.html">Java Newsletter</a></h4>
+            </div>
         </section>
     </div>
     <footer class="row text-center footer">
         <hr/>
         <h6 class="text-center copyright">© <script>document.write(new Date().getFullYear())</script>. Oleksandr Stefanovskyi</h6>
     </footer>
+    <script>
+        document.getElementById('blogs-toggle').addEventListener('click', function() {
+            var links = document.getElementById('blogs-links');
+            if (links.style.display === 'none') {
+                links.style.display = 'block';
+            } else {
+                links.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

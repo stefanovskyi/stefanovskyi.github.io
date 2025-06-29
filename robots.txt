@@ -1,1 +1,6 @@
 User-agent: *
+Allow: /
+
+Sitemap: https://stefanovskyi.com/sitemap.xml
+
+Crawl-delay: 1

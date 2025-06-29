@@ -3,18 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>stefanovskyi.github.io/categories/</loc>
-    <priority>0</priority>
+    <loc>https://stefanovskyi.com/</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>stefanovskyi.github.io/</loc>
-    <priority>0</priority>
+    <loc>https://stefanovskyi.com/newsletter/java/newsletter.html</loc>
+    <lastmod>2019-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>stefanovskyi.github.io/tags/</loc>
-    <priority>0</priority>
+    <loc>https://stefanovskyi.com/newsletter/java/newsletter-2019.html</loc>
+    <lastmod>2019-12-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   
 </urlset>

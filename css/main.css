@@ -136,8 +136,12 @@ section.meta {
     margin-bottom: 20px;
 }
 
-.social,
+.social {
+    color: #526d7a;
+}
+
 .social a {
+    padding: 0 10px;
     color: #526d7a;
 }
 

@@ -151,6 +151,13 @@ section.meta {
     transform: scale(1.3);
 }
 
+/* Hover effects for blog and project items */
+#blogs-links a:hover,
+#projects-links a:hover {
+    color: #87CEEB !important;
+    transition: color 0.3s ease;
+}
+
 .title {
     font-family: 'Roboto Slab', serif;
     font-weight: 400;

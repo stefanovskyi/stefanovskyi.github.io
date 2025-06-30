@@ -20,6 +20,11 @@
     <meta name="theme-color" content="#ffffff">
 
     <base href="stefanovskyi.github.io/">
+    <script>
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            document.querySelector('base').href = './';
+        }
+    </script>
 
     <title>Oleksandr Stefanovskyi - Strategic Technology Partner</title>
 

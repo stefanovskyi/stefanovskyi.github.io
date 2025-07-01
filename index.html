@@ -83,6 +83,26 @@
             <h4 class="description">I align tech plans with business goals and guide projects from first sketch to launch. <br><br>I have led work that puts <span class="generative-ai">Generative AI</span> into production training domain-specific models, building prompt workflows, and setting up secure deployment rails. I still design and scale microservice systems, practice test-driven development, and keep both engineers and senior leaders on the same page.</h4>
         </section>
 
+        <section id="cta-pane" class="row text-center cta">
+            <div class="rotating-text">
+                <span class="static-text">Let's Build </span>
+                <span class="words-wrapper">
+                    <span      class="word alizarin">AI Solutions</span> 
+                    <span      class="word emerald">GenAI Tools</span>
+                    <span      class="word wisteria">Smart Agents</span>
+                    <span   class="word peter-river">AI Pipelines</span>
+                    <span       class="word emerald">Voice Agents</span>
+                    <span      class="word alizarin">NLP Workflow</span> 
+                    <span    class="word peter-river">Data Copilot</span>
+                    <span    class="word sun-flower">AI Assistant</span>
+                </span>
+                <span class="static-text"> Together</span>
+            </div>
+            <a href="https://calendly.com/astefanovskiy/30min" target="_blank" rel="noopener" class="cta-button">
+                <i class="fa fa-calendar" aria-hidden="true"></i> Schedule a Call
+            </a>
+        </section>
+
         <section id="social-pane" class="row text-center social">
             <a id="fb-link" href="https://facebook.com/stefanovskyi" target="_blank" rel="noopener"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
             <a id="gh-link" href="https://github.com/stefanovskyi" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -129,6 +149,85 @@
         document.getElementById('projects-toggle').addEventListener('click', function() {
             toggleLinks('projects-toggle', 'projects-links');
         });
+
+        // Rotating text animation
+        let words = document.querySelectorAll(".word");
+        words.forEach(word => {
+            let letters = word.textContent.split("");
+            word.textContent = "";
+            letters.forEach(letter => {
+                let span = document.createElement("span");
+                span.textContent = letter === " " ? "\u00A0" : letter;
+                span.className = "letter" + (letter === " " ? " space" : "");
+                word.append(span);
+            });
+        });
+
+        // Set .words-wrapper width to the widest .word
+        function setWordsWrapperWidth() {
+            const wrapper = document.querySelector('.words-wrapper');
+            let maxWidth = 0;
+            words.forEach(word => {
+                word.style.position = 'static'; // Temporarily reset for measurement
+                word.style.opacity = 1;
+                word.style.display = 'inline-flex';
+                const width = word.offsetWidth;
+                if (width > maxWidth) maxWidth = width;
+                word.style.position = '';
+                word.style.opacity = '';
+                word.style.display = '';
+            });
+            if (wrapper) {
+                wrapper.style.width = maxWidth + 'px';
+                wrapper.style.display = 'inline-block';
+                wrapper.style.verticalAlign = 'middle';
+            }
+            // Restore .word styles for animation
+            words.forEach(word => {
+                word.style.position = 'absolute';
+                word.style.left = 0;
+                word.style.width = '100%';
+                word.style.textAlign = 'center';
+            });
+        }
+        setWordsWrapperWidth();
+        window.addEventListener('resize', setWordsWrapperWidth);
+
+        let currentWordIndex = 0;
+        let maxWordIndex = words.length - 1;
+        if (words[currentWordIndex]) {
+            words[currentWordIndex].style.opacity = "1";
+        }
+
+        let rotateText = () => {
+            let currentWord = words[currentWordIndex];
+            let nextWord =
+                currentWordIndex === maxWordIndex ? words[0] : words[currentWordIndex + 1];
+            
+            // rotate out letters of current word
+            Array.from(currentWord.children).forEach((letter, i) => {
+                setTimeout(() => {
+                    letter.className = "letter out";
+                }, i * 80);
+            });
+            
+            // reveal and rotate in letters of next word
+            nextWord.style.opacity = "1";
+            Array.from(nextWord.children).forEach((letter, i) => {
+                letter.className = "letter behind";
+                setTimeout(() => {
+                    letter.className = "letter in";
+                }, 340 + i * 80);
+            });
+            
+            currentWordIndex =
+                currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
+        };
+
+        if (words.length > 0) {
+            rotateText();
+            setInterval(rotateText, 4000);
+        }
     </script>
 </body>
 </html>

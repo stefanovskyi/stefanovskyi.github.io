@@ -178,15 +178,12 @@
         window.addEventListener('resize', setWordsWrapperWidth);
 
         let currentWordIndex = 0;
-        let maxWordIndex = words.length - 1;
-        if (words[currentWordIndex]) {
-            words[currentWordIndex].style.opacity = "1";
-        }
+        words[currentWordIndex].style.opacity = "1";
 
         let rotateText = () => {
             let currentWord = words[currentWordIndex];
             let nextWord =
-                currentWordIndex === maxWordIndex ? words[0] : words[currentWordIndex + 1];
+                currentWordIndex === words.length - 1 ? words[0] : words[currentWordIndex + 1];
             
             // rotate out letters of current word
             Array.from(currentWord.children).forEach((letter, i) => {
@@ -205,7 +202,7 @@
             });
             
             currentWordIndex =
-                currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
+                currentWordIndex === words.length - 1 ? 0 : currentWordIndex + 1;
         };
 
         if (words.length > 0) {

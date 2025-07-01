@@ -10,8 +10,6 @@ body {
     font-family: 'Roboto Slab', 'Roboto', 'Lato', sans-serif;
     font-size: 20px;
     font-weight: 400;
-    width: auto;
-    margin: 0;
     background-color: #fcfcfc;
     display: flex;
     flex-direction: column;
@@ -102,7 +100,7 @@ html {
 }
 
 h3.intro {
-    margin-top: 0px
+    margin-top: 0;
 }
 
 .main-menu {
@@ -119,9 +117,6 @@ h3.intro {
     font-family: 'Lato', sans-serif;
     font-size: 20px;
     font-weight: 300;
-
-    text-decoration: none;
-
     color: #303030 !important;
 }
 
@@ -129,7 +124,6 @@ h3.intro {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
     font-weight: 200;
-
     color: #bbb;
 }
 
@@ -141,20 +135,16 @@ h6.meta {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
     font-weight: 200;
-
     color: #bbb;
 }
 
 section.meta {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .social {
     margin-top: 10px;
     margin-bottom: 20px;
-}
-
-.social {
     color: #526d7a;
 }
 
@@ -179,7 +169,6 @@ section.meta {
 .title {
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
-
     color: #555;
 }
 
@@ -196,7 +185,6 @@ header.title {
 
     .list {
         font-family: 'Roboto', sans-serif;
-
         margin-top: 30px;
     }
 }
@@ -212,7 +200,6 @@ header.title {
     display: block;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    inset: 0 0 0 0;
     background: hsl(200 100% 80%);
     z-index: -1;
     transition: transform .3s ease;

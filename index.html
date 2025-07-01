@@ -33,9 +33,6 @@
           href="./index.xml">
 
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-
-    <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i">
 
     <link rel="stylesheet"
@@ -137,17 +134,17 @@
         <h6 class="text-center copyright">© <script>document.write(new Date().getFullYear())</script>. Oleksandr Stefanovskyi</h6>
     </footer>
     <script>
-        function toggleLinks(toggleId, linksId) {
+        function toggleLinks(linksId) {
             var links = document.getElementById(linksId);
             links.style.display = links.style.display === 'none' ? 'block' : 'none';
         }
 
         document.getElementById('blogs-toggle').addEventListener('click', function() {
-            toggleLinks('blogs-toggle', 'blogs-links');
+            toggleLinks('blogs-links');
         });
         
         document.getElementById('projects-toggle').addEventListener('click', function() {
-            toggleLinks('projects-toggle', 'projects-links');
+            toggleLinks('projects-links');
         });
 
         // Rotating text animation
@@ -168,27 +165,14 @@
             const wrapper = document.querySelector('.words-wrapper');
             let maxWidth = 0;
             words.forEach(word => {
-                word.style.position = 'static'; // Temporarily reset for measurement
-                word.style.opacity = 1;
-                word.style.display = 'inline-flex';
                 const width = word.offsetWidth;
                 if (width > maxWidth) maxWidth = width;
-                word.style.position = '';
-                word.style.opacity = '';
-                word.style.display = '';
             });
             if (wrapper) {
                 wrapper.style.width = maxWidth + 'px';
                 wrapper.style.display = 'inline-block';
                 wrapper.style.verticalAlign = 'middle';
             }
-            // Restore .word styles for animation
-            words.forEach(word => {
-                word.style.position = 'absolute';
-                word.style.left = 0;
-                word.style.width = '100%';
-                word.style.textAlign = 'center';
-            });
         }
         setWordsWrapperWidth();
         window.addEventListener('resize', setWordsWrapperWidth);

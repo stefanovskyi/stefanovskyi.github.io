@@ -289,31 +289,35 @@ header.title {
     font-weight: 400;
     font-size: 28px;
     color: #444;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 12px;
     text-align: center;
     width: 100%;
+    flex-wrap: nowrap;
+    max-width: 600px;
 }
 
-.rotating-text .text-line {
-    display: block;
+.prefix-text, .suffix-text {
+    display: inline-block;
     text-align: center;
     line-height: 1.2;
-    width: 100%;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .words-wrapper {
-    display: block;
+    display: inline-block;
     position: relative;
     height: 1.2em;
     text-align: center;
-    margin: 5px 0;
+    margin: 0;
     overflow: hidden;
-    width: 100%;
+    min-width: 200px;
+    flex-shrink: 0;
 }
 
 .word {
@@ -400,11 +404,13 @@ header.title {
 @media (max-width: 768px) {
     .rotating-text {
         font-size: 24px;
-        gap: 3px;
+        gap: 10px;
     }
     .words-wrapper {
         height: 1.1em;
-        margin: 3px 0;
+        margin: 0;
+        min-width: 170px;
+        flex-shrink: 0;
     }
     .cta-button {
         font-size: 16px;
@@ -419,11 +425,15 @@ header.title {
 @media (max-width: 480px) {
     .rotating-text {
         font-size: 20px;
-        gap: 2px;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .words-wrapper {
         height: 1em;
-        margin: 2px 0;
+        margin: 0;
+        min-width: 140px;
+        flex-shrink: 0;
     }
     .cta-button {
         font-size: 14px;
@@ -532,14 +542,16 @@ header.title {
     
     .rotating-text {
         font-size: 24px;
-        gap: 3px;
+        gap: 10px;
         width: 100%;
         align-items: center;
     }
     
     .words-wrapper {
         height: 1.1em;
-        margin: 3px 0;
+        margin: 0;
+        min-width: 170px;
+        flex-shrink: 0;
     }
     
     .cta-button {
@@ -578,6 +590,44 @@ header.title {
     .rotating-text {
         font-size: 20px;
         width: 100%;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .words-wrapper {
+        min-width: 140px;
+        flex-shrink: 0;
+    }
+}
+
+/* Additional small screen adjustments for single line layout */
+@media (max-width: 360px) {
+    .rotating-text {
+        font-size: 18px;
+        gap: 6px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .words-wrapper {
+        min-width: 125px;
+        flex-shrink: 0;
+    }
+}
+
+/* Very small screens - ensure readability */
+@media (max-width: 320px) {
+    .rotating-text {
+        font-size: 16px;
+        gap: 4px;
+        flex-wrap: wrap;
+        line-height: 1.3;
+    }
+    
+    .words-wrapper {
+        min-width: 110px;
+        height: 1.3em;
     }
     
     .cta-button {

@@ -145,8 +145,8 @@
 
         <section id="cta-pane" class="row text-center cta">
             <div class="rotating-text">
-                <span class="static-text">Let's Build </span>
-                <span class="words-wrapper">
+                <div class="text-line">Let's Build</div>
+                <div class="words-wrapper">
                     <span      class="word alizarin">AI Solutions</span> 
                     <span      class="word emerald">GenAI Tools</span>
                     <span      class="word wisteria">Smart Agents</span>
@@ -155,8 +155,8 @@
                     <span      class="word alizarin">NLP Workflow</span> 
                     <span    class="word peter-river">Data Copilot</span>
                     <span    class="word sun-flower">AI Assistant</span>
-                </span>
-                <span class="static-text"> Together</span>
+                </div>
+                <div class="text-line">Together</div>
             </div>
             <a href="https://calendly.com/astefanovskiy/30min" target="_blank" rel="noopener" class="cta-button" aria-label="Schedule a 30-minute consultation call">
                 <i class="fa fa-calendar" aria-hidden="true"></i> Schedule a Call
@@ -223,22 +223,22 @@
             });
         });
 
-        // Set .words-wrapper width to the widest .word
-        function setWordsWrapperWidth() {
+        // Set .words-wrapper height to accommodate the tallest .word
+        function setWordsWrapperHeight() {
             const wrapper = document.querySelector('.words-wrapper');
-            let maxWidth = 0;
+            let maxHeight = 0;
             words.forEach(word => {
-                const width = word.offsetWidth;
-                if (width > maxWidth) maxWidth = width;
+                const height = word.offsetHeight;
+                if (height > maxHeight) maxHeight = height;
             });
             if (wrapper) {
-                wrapper.style.width = maxWidth + 'px';
-                wrapper.style.display = 'inline-block';
-                wrapper.style.verticalAlign = 'middle';
+                wrapper.style.height = maxHeight + 'px';
+                wrapper.style.display = 'block';
+                wrapper.style.textAlign = 'center';
             }
         }
-        setWordsWrapperWidth();
-        window.addEventListener('resize', setWordsWrapperWidth);
+        setWordsWrapperHeight();
+        window.addEventListener('resize', setWordsWrapperHeight);
 
         let currentWordIndex = 0;
         words[currentWordIndex].style.opacity = "1";

@@ -1,17 +1,47 @@
 // Performance optimization utilities
 const PerformanceOptimizer = {
     // Lazy load scripts when they're needed
-    lazyLoadScript: (src, callback) => {
+    lazyLoadScript: (src, callback, options = {}) => {
+        // Check if script already exists
+        if (document.querySelector(`script[src="${src}"]`)) {
+            if (callback) callback();
+            return;
+        }
+        
         const script = document.createElement('script');
         script.src = src;
         script.async = true;
         script.defer = true;
         
+        if (options.type) script.type = options.type;
+        if (options.crossorigin) script.crossOrigin = options.crossorigin;
+        
         if (callback) {
             script.onload = callback;
+            script.onerror = () => console.warn(`Failed to load script: ${src}`);
         }
         
         document.head.appendChild(script);
+    },
+
+    // Lazy load CSS when needed
+    lazyLoadCSS: (href, callback) => {
+        // Check if stylesheet already exists
+        if (document.querySelector(`link[href="${href}"]`)) {
+            if (callback) callback();
+            return;
+        }
+        
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        
+        if (callback) {
+            link.onload = callback;
+            link.onerror = () => console.warn(`Failed to load stylesheet: ${href}`);
+        }
+        
+        document.head.appendChild(link);
     },
 
     // Intersection Observer for lazy loading
@@ -51,6 +81,20 @@ const PerformanceOptimizer = {
                 setTimeout(() => inThrottle = false, limit);
             }
         };
+    },
+
+    // Load resource on user interaction
+    loadOnInteraction: (loadFn, events = ['mousedown', 'touchstart']) => {
+        let loaded = false;
+        const load = () => {
+            if (loaded) return;
+            loaded = true;
+            loadFn();
+            events.forEach(event => document.removeEventListener(event, load, true));
+        };
+        
+        events.forEach(event => document.addEventListener(event, load, true));
+        return load;
     }
 };
 

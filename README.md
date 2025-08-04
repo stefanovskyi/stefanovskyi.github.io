@@ -29,7 +29,7 @@ stefanovskyi.github.io/
 ## 🛠️ Built With
 
 - **HTML5** & **CSS3**
-- **Bootstrap 3.3.7**
+- **Custom CSS** (minimal Bootstrap replacements)
 - **Font Awesome** icons
 - **Google Fonts** (Lato, Roboto)
 - **GitHub Pages** hosting

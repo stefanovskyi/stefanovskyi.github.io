@@ -6,8 +6,13 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Google Tag Manager -->
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KPKWZMD"></script>
+    <!-- Resource hints for better performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Optimized Google Tag Manager - load asynchronously and defer non-critical parts -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -17,7 +22,7 @@
             'page_location': window.location.href
         });
     </script>
-    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KPKWZMD" defer></script>
 
     <meta name="description" content="Oleksandr Stefanovskyi - Strategic Technology Partner experienced in AI, LLMs, and Generative AI">
     <meta name="keywords" content="Oleksandr Stefanovskyi, Stefanovskyi, AI, LLMs, Language Models, LangGraph, MCP, A2A, Generative AI, Strategic Technology Partner">
@@ -33,10 +38,6 @@
     </script>
 
     <title>Oleksandr Stefanovskyi - Strategic Technology Partner</title>
-
-    <!-- Preconnect to external domains for better performance -->
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <style>
         /* Local Font Declarations */
@@ -167,7 +168,7 @@
             <a id="tw-link" href="https://twitter.com/intent/follow?screen_name=ostefanovskyi" target="_blank" rel="noopener" aria-label="Follow Oleksandr Stefanovskyi on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
         </section>
 
-        <section id="main-menu-pane" class="row text-center main-menu">
+        <section id="main-menu-pane" class="main-menu">
             <div class="col-xs-6">
                 <h4 id="blogs-toggle" class="menu-item" style="cursor: pointer;"><b><i class="fa fa-rss" aria-hidden="true"></i> Blogs</b></h4>
                 <div id="blogs-links" style="display: none;">
@@ -185,87 +186,89 @@
                 </div>
             </div>
         </section>
-    </div>
-    <footer class="row text-center footer">
-        <hr/>
-        <h6 class="text-center copyright">© <script>document.write(new Date().getFullYear())</script>. Oleksandr Stefanovskyi</h6>
-    </footer>
-    <script>
-        function toggleLinks(linksId) {
-            var links = document.getElementById(linksId);
-            links.style.display = links.style.display === 'none' ? 'block' : 'none';
-        }
-
-        document.getElementById('blogs-toggle').addEventListener('click', function() {
-            toggleLinks('blogs-links');
-        });
         
-        document.getElementById('projects-toggle').addEventListener('click', function() {
-            toggleLinks('projects-links');
-        });
+        <footer class="footer">
+            <hr/>
+            <h6 class="copyright">© <script>document.write(new Date().getFullYear())</script>. Oleksandr Stefanovskyi</h6>
+        </footer>
+    </div>
+    <!-- Optimized JavaScript - loaded at end of body and deferred -->
+    <script defer>
+        // Optimized toggle functionality
+        const toggleLinks = (linksId) => {
+            const links = document.getElementById(linksId);
+            links.style.display = links.style.display === 'none' ? 'block' : 'none';
+        };
 
-        // Rotating text animation
-        let words = document.querySelectorAll(".word");
+        // Event listeners for menu toggles
+        document.getElementById('blogs-toggle').addEventListener('click', () => toggleLinks('blogs-links'));
+        document.getElementById('projects-toggle').addEventListener('click', () => toggleLinks('projects-links'));
+
+        // Optimized rotating text animation
+        const words = document.querySelectorAll(".word");
+        
+        // Initialize letter spans
         words.forEach(word => {
-            let letters = word.textContent.split("");
+            const letters = word.textContent.split("");
             word.textContent = "";
             letters.forEach(letter => {
-                let span = document.createElement("span");
+                const span = document.createElement("span");
                 span.textContent = letter === " " ? "\u00A0" : letter;
                 span.className = "letter" + (letter === " " ? " space" : "");
                 word.append(span);
             });
         });
 
-        // Set .words-wrapper height to accommodate the tallest .word
-        function setWordsWrapperHeight() {
+        // Set wrapper height once
+        const setWordsWrapperHeight = () => {
             const wrapper = document.querySelector('.words-wrapper');
-            let maxHeight = 0;
-            words.forEach(word => {
-                const height = word.offsetHeight;
-                if (height > maxHeight) maxHeight = height;
-            });
-            if (wrapper) {
-                wrapper.style.height = maxHeight + 'px';
-                wrapper.style.display = 'block';
-                wrapper.style.textAlign = 'center';
-            }
-        }
-        setWordsWrapperHeight();
-        window.addEventListener('resize', setWordsWrapperHeight);
-
-        let currentWordIndex = 0;
-        words[currentWordIndex].style.opacity = "1";
-
-        let rotateText = () => {
-            let currentWord = words[currentWordIndex];
-            let nextWord =
-                currentWordIndex === words.length - 1 ? words[0] : words[currentWordIndex + 1];
+            if (!wrapper || words.length === 0) return;
             
-            // rotate out letters of current word
-            Array.from(currentWord.children).forEach((letter, i) => {
-                setTimeout(() => {
-                    letter.className = "letter out";
-                }, i * 80);
-            });
-            
-            // reveal and rotate in letters of next word
-            nextWord.style.opacity = "1";
-            Array.from(nextWord.children).forEach((letter, i) => {
-                letter.className = "letter behind";
-                setTimeout(() => {
-                    letter.className = "letter in";
-                }, 340 + i * 80);
-            });
-            
-            currentWordIndex =
-                currentWordIndex === words.length - 1 ? 0 : currentWordIndex + 1;
+            // Use CSS height instead of calculating
+            wrapper.style.height = '1.2em';
+            wrapper.style.display = 'block';
+            wrapper.style.textAlign = 'center';
         };
 
+        // Initialize animation
+        let currentWordIndex = 0;
         if (words.length > 0) {
+            setWordsWrapperHeight();
+            words[currentWordIndex].style.opacity = "1";
+            
+            const rotateText = () => {
+                const currentWord = words[currentWordIndex];
+                const nextWord = currentWordIndex === words.length - 1 ? words[0] : words[currentWordIndex + 1];
+                
+                // Rotate out letters of current word
+                Array.from(currentWord.children).forEach((letter, i) => {
+                    setTimeout(() => {
+                        letter.className = "letter out";
+                    }, i * 80);
+                });
+                
+                // Reveal and rotate in letters of next word
+                nextWord.style.opacity = "1";
+                Array.from(nextWord.children).forEach((letter, i) => {
+                    letter.className = "letter behind";
+                    setTimeout(() => {
+                        letter.className = "letter in";
+                    }, 340 + i * 80);
+                });
+                
+                currentWordIndex = currentWordIndex === words.length - 1 ? 0 : currentWordIndex + 1;
+            };
+
             rotateText();
             setInterval(rotateText, 4000);
         }
+
+        // Handle resize events efficiently
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(setWordsWrapperHeight, 100);
+        });
     </script>
 </body>
 </html>

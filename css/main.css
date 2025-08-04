@@ -6,6 +6,14 @@ a:link {
     color: #526d7a;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Roboto Slab', 'Roboto', 'Lato', sans-serif;
     font-size: 20px;
@@ -14,11 +22,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-html {
-    position: relative;
-    margin: 0;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .author {
@@ -32,11 +38,16 @@ html {
 }
 
 .container {
-    overflow: auto;
+    overflow: visible;
     max-width: 680px;
     padding: 0 15px;
     flex: 1 0 auto;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
 }
 
 .copyright {
@@ -44,6 +55,9 @@ html {
     font-size: 12px;
     font-weight: 200;
     color: #666;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .description {
@@ -56,12 +70,31 @@ html {
     margin-top: 10px;
     width: 100%;
     color: #bbb;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer hr {
+    width: 100%;
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #eee;
 }
 
 .header {
     margin-top: 60px;
     margin-bottom: 20px;
     text-align: center;
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes float {
@@ -84,12 +117,21 @@ html {
     height: 200px;
     box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
     margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .info {
     margin-top: 10px;
     margin-bottom: 20px;
     text-align: center;
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .intro {
@@ -107,6 +149,16 @@ h3.intro {
 .main-menu {
     margin-top: 10px;
     margin-bottom: 20px;
+    flex-shrink: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    justify-items: center;
+    align-items: start;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menu {
@@ -147,6 +199,12 @@ section.meta {
     margin-top: 10px;
     margin-bottom: 20px;
     color: #526d7a;
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .social a {
@@ -154,6 +212,7 @@ section.meta {
     color: #526d7a;
     transition: transform 0.3s ease;
     display: inline-block;
+    text-align: center;
 }
 
 .social a:hover {
@@ -217,6 +276,12 @@ header.title {
 .cta {
     margin-top: 30px;
     margin-bottom: 30px;
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .rotating-text {
@@ -230,32 +295,39 @@ header.title {
     justify-content: center;
     align-items: center;
     gap: 5px;
+    text-align: center;
+    width: 100%;
 }
 
 .rotating-text .text-line {
     display: block;
     text-align: center;
+    line-height: 1.2;
+    width: 100%;
 }
 
 .words-wrapper {
     display: block;
     position: relative;
-    min-height: 1.2em;
+    height: 1.2em;
     text-align: center;
     margin: 5px 0;
+    overflow: hidden;
+    width: 100%;
 }
 
 .word {
     position: absolute;
     left: 50%;
-    top: 0;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
     white-space: nowrap;
     transition: opacity 0.3s;
     text-align: center;
     word-spacing: 0.08em;
     letter-spacing: 0.01em;
+    line-height: 1.2;
 }
 
 .word .letter {
@@ -310,7 +382,8 @@ header.title {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .cta-button:hover {
@@ -330,7 +403,7 @@ header.title {
         gap: 3px;
     }
     .words-wrapper {
-        min-height: 1em;
+        height: 1.1em;
         margin: 3px 0;
     }
     .cta-button {
@@ -343,12 +416,30 @@ header.title {
     }
 }
 
+@media (max-width: 480px) {
+    .rotating-text {
+        font-size: 20px;
+        gap: 2px;
+    }
+    .words-wrapper {
+        height: 1em;
+        margin: 2px 0;
+    }
+    .cta-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
 /* Bootstrap replacements - only the styles actually used */
 .row {
     margin-left: -15px;
     margin-right: -15px;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .row:before,
@@ -366,9 +457,25 @@ header.title {
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    flex: 0 0 50%;
-    max-width: 50%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+}
+
+#blogs-links,
+#projects-links {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#blogs-links h5,
+#projects-links h5 {
+    margin: 5px 0;
+    text-align: center;
 }
 
 .text-center {
@@ -381,9 +488,105 @@ header.title {
 
 /* Responsive adjustments */
 @media (max-width: 767px) {
-    .col-xs-6 {
-        flex: 0 0 100%;
+    body {
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: center;
         max-width: 100%;
+    }
+    
+    .main-menu {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    
+    .col-xs-6 {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+    }
+    
+    .header {
+        margin-top: 40px;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .headshot {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .rotating-text {
+        font-size: 24px;
+        gap: 3px;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .words-wrapper {
+        height: 1.1em;
+        margin: 3px 0;
+    }
+    
+    .cta-button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+    
+    .social {
+        padding: 0 10px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .social a {
+        padding: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .main-menu {
+        max-width: 280px;
+        width: 100%;
+    }
+    
+    .headshot {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .rotating-text {
+        font-size: 20px;
+        width: 100%;
+    }
+    
+    .cta-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    
+    .social a {
+        padding: 0 6px;
     }
 }
 

@@ -53,12 +53,7 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="bfcache" content="allowed">
 
-    <base href="stefanovskyi.github.io/">
-    <script>
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            document.querySelector('base').href = './';
-        }
-    </script>
+    <base href="/">
 
     <title>Oleksandr Stefanovskyi - Strategic Technology Partner</title>
 
@@ -244,8 +239,8 @@
     </style>
 
     <!-- Load main CSS asynchronously to prevent render-blocking -->
-    <link rel="preload" href="./css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="./css/main.css"></noscript>
+    <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
 
     <link rel="icon"
           type="image/png"
@@ -322,7 +317,7 @@
     <div class="container">
         <header class="row text-center header">
             <a href="https://linkedin.com/in/oleksandr-stefanovskyi" target="_blank" rel="noopener" aria-label="View Oleksandr Stefanovskyi's LinkedIn profile">
-                <img src="./img/headshot.webp" alt="Oleksandr Stefanovskyi" class="img-circle text-center headshot" loading="lazy" fetchpriority="high">
+                <img src="/img/headshot.webp" alt="Oleksandr Stefanovskyi" class="img-circle text-center headshot" loading="lazy" fetchpriority="high">
             </a>
             <h1 class="author">Oleksandr Stefanovskyi</h1>
         </header>
@@ -387,7 +382,7 @@
         </footer>
     </div>
     <!-- Load performance utilities -->
-    <script src="./js/performance.js" defer></script>
+    <script src="/js/performance.js" defer></script>
     
     <!-- Optimized JavaScript - loaded at end of body and deferred -->
     <script defer>

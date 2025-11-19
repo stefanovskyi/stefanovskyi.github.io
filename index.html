@@ -402,14 +402,22 @@
         document.getElementById('fb-link')?.addEventListener('click', loadFacebookPixel, { once: true });
 
         // Optimized toggle functionality
-        const toggleLinks = (linksId) => {
+        const toggleLinks = (linksId, toggleId) => {
             const links = document.getElementById(linksId);
-            links.style.display = links.style.display === 'none' ? 'block' : 'none';
+            const isHidden = links.style.display === 'none';
+            links.style.display = isHidden ? 'block' : 'none';
+            
+            if (isHidden && toggleId) {
+                // Small delay to ensure layout update
+                setTimeout(() => {
+                    document.getElementById(toggleId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 10);
+            }
         };
 
         // Event listeners for menu toggles
-        document.getElementById('blogs-toggle').addEventListener('click', () => toggleLinks('blogs-links'));
-        document.getElementById('projects-toggle').addEventListener('click', () => toggleLinks('projects-links'));
+        document.getElementById('blogs-toggle').addEventListener('click', () => toggleLinks('blogs-links', 'blogs-toggle'));
+        document.getElementById('projects-toggle').addEventListener('click', () => toggleLinks('projects-links', 'projects-toggle'));
 
         // Optimized rotating text animation
         const words = document.querySelectorAll(".word");

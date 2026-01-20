@@ -158,6 +158,12 @@
         <div class="nav-brand">
             <span class="brand-text">OS</span>
         </div>
+
+        <button class="hamburger-menu" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         
         <ul class="nav-menu">
             <li class="nav-item">
@@ -422,6 +428,33 @@
     <script src="/js/performance.js" defer></script>
     
     <script defer>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+
+            // Close menu when clicking a link
+            navMenu.querySelectorAll('a, button').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+
         // Check for review text truncation
         function checkTruncation() {
             const reviews = document.querySelectorAll('.review-card');

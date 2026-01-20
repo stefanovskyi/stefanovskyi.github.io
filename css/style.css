@@ -274,7 +274,7 @@ h3.intro {
 
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
 }
 
@@ -318,6 +318,7 @@ h3.intro {
 .review-meta {
     flex: 1;
     min-width: 0; /* allows text truncation */
+    padding-right: 24px;
 }
 
 .review-author {

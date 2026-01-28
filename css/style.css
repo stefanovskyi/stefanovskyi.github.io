@@ -10,6 +10,8 @@
   --font-serif: "Roboto Slab", serif;
 
   /* Component System */
+  --text-size-section-title: 2.5rem;
+  --text-size-h3: 1.5rem;
   --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -35,6 +37,10 @@
   --highlight-hover: #1d4ed8;
   
   --shadow-navbar: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -299,6 +305,7 @@ h3.intro {
 .reviews-section {
   width: 100%;
   margin-top: 60px;
+  scroll-margin-top: 100px;
 }
 
 .reviews-header {
@@ -325,6 +332,12 @@ h3.intro {
 
 @media (min-width: 1100px) {
   .reviews-grid {
+    width: 110%;
+    margin-left: -5%;
+  }
+
+  /* Apply same breakout style to services grid */
+  .services-grid {
     width: 110%;
     margin-left: -5%;
   }
@@ -409,14 +422,14 @@ h3.intro {
 .review-author {
   font-family: var(--font-main);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: var(--text-primary);
   margin: 0 0 4px 0;
   line-height: 1.2;
 }
 
 .review-role {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
   margin: 0 0 6px 0;
   display: -webkit-box;
@@ -428,13 +441,13 @@ h3.intro {
 }
 
 .review-date {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   font-weight: 500;
 }
 
 .review-body {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.6;
   display: -webkit-box;
@@ -698,6 +711,7 @@ h3.intro {
   width: 100%;
   margin-top: 100px;
   margin-bottom: 60px;
+  scroll-margin-top: 100px;
 }
 
 .services-header {
@@ -715,7 +729,7 @@ h3.intro {
 }
 
 .services-intro {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: var(--text-secondary);
   line-height: 1.6;
 }
@@ -751,7 +765,7 @@ h3.intro {
 
 .service-name {
   font-family: var(--font-serif);
-  font-size: var(--text-size-h3); /* Increased slightly for emphasis */
+  font-size: 1.75rem; /* Increased slightly for emphasis */
   font-weight: 700;
   color: var(--text-primary);
   margin: 0;
@@ -760,7 +774,7 @@ h3.intro {
 
 .service-subheader {
   font-family: var(--font-main);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-primary);
   margin: 0 0 10px 0;
@@ -769,7 +783,7 @@ h3.intro {
 }
 
 .service-description {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;

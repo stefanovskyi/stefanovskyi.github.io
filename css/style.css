@@ -705,8 +705,8 @@ h3.intro {
   
   /* Desktop Layout: Grid */
   display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 0 40px;
+  grid-template-columns: 1fr 322px;
+  gap: 16px 40px;
   align-items: start;
 }
 
@@ -716,16 +716,13 @@ h3.intro {
   border-color: rgba(0, 0, 0, 0.05);
 }
 
-.service-main {
-  grid-column: 1;
-}
-
 .service-name {
   font-family: var(--font-serif);
   font-size: 1.5rem; /* Increased slightly for emphasis */
   font-weight: 700;
   color: var(--text-primary);
-  margin: 0 0 12px 0;
+  margin: 0;
+  grid-column: 1 / -1;
 }
 
 .service-subheader {
@@ -733,8 +730,9 @@ h3.intro {
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin: 0 0 16px 0;
+  margin: 0 0 10px 0;
   line-height: 1.4;
+  grid-column: 1 / -1;
 }
 
 .service-description {
@@ -742,6 +740,7 @@ h3.intro {
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
+  grid-column: 1;
 }
 
 .service-meta {
@@ -754,20 +753,20 @@ h3.intro {
   align-self: end;
 }
 
-.service-meta p {
-  margin: 0 0 12px 0;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-
-.service-meta p:last-child {
-  margin: 0;
-}
-
-.service-meta strong {
+.deliverables-title {
   color: var(--text-primary);
   font-weight: 600;
   display: block;
+  margin-bottom: 8px;
+}
+
+.deliverables-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+}
+
+.deliverables-list li {
   margin-bottom: 4px;
 }
 

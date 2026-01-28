@@ -1,265 +1,360 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Resource hints for better performance -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
     <!-- Lazy-loaded Google Tag Manager for better performance -->
     <script>
-        // Initialize dataLayer but defer GTM loading
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        // Lazy load GTM after user interaction or delay
-        let gtmLoaded = false;
-        const loadGTM = () => {
-            if (gtmLoaded) return;
-            gtmLoaded = true;
-            
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KPKWZMD';
-            document.head.appendChild(script);
-            
-            gtag('config', 'GTM-KPKWZMD', {
-                'page_title': 'Oleksandr Stefanovskyi - Strategic Technology Partner',
-                'page_location': window.location.href
-            });
-        };
-        
-        // Load GTM on user interaction or after 3 seconds
-        const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'];
-        const loadGTMOnInteraction = () => {
-            loadGTM();
-            events.forEach(event => document.removeEventListener(event, loadGTMOnInteraction, true));
-        };
-        
-        events.forEach(event => document.addEventListener(event, loadGTMOnInteraction, true));
-        setTimeout(loadGTM, 3000); // Fallback after 3 seconds
+      // Initialize dataLayer but defer GTM loading
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      // Lazy load GTM after user interaction or delay
+      let gtmLoaded = false;
+      const loadGTM = () => {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-KPKWZMD";
+        document.head.appendChild(script);
+
+        gtag("config", "GTM-KPKWZMD", {
+          page_title: "Oleksandr Stefanovskyi - Strategic Technology Partner",
+          page_location: window.location.href,
+        });
+      };
+
+      // Load GTM on user interaction or after 3 seconds
+      const events = [
+        "mousedown",
+        "mousemove",
+        "keypress",
+        "scroll",
+        "touchstart",
+        "click",
+      ];
+      const loadGTMOnInteraction = () => {
+        loadGTM();
+        events.forEach((event) =>
+          document.removeEventListener(event, loadGTMOnInteraction, true),
+        );
+      };
+
+      events.forEach((event) =>
+        document.addEventListener(event, loadGTMOnInteraction, true),
+      );
+      setTimeout(loadGTM, 3000); // Fallback after 3 seconds
     </script>
 
-    <meta name="description" content="Oleksandr Stefanovskyi - Strategic Technology Partner experienced in AI, LLMs, and Generative AI">
-    <meta name="keywords" content="Oleksandr Stefanovskyi, Stefanovskyi, AI, LLMs, Language Models, LangGraph, MCP, A2A, Generative AI, Strategic Technology Partner">
+    <meta
+      name="description"
+      content="Oleksandr Stefanovskyi - Strategic Technology Partner experienced in AI, LLMs, and Generative AI"
+    />
+    <meta
+      name="keywords"
+      content="Oleksandr Stefanovskyi, Stefanovskyi, AI, LLMs, Language Models, LangGraph, MCP, A2A, Generative AI, Strategic Technology Partner"
+    />
 
-    <meta name="theme-color" content="#ffffff">
-    <meta name="bfcache" content="allowed">
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="bfcache" content="allowed" />
 
-    <base href="/">
+    <base href="/" />
 
     <title>Oleksandr Stefanovskyi - Strategic Technology Partner</title>
 
     <!-- Local Font Declarations -->
     <style>
-        @font-face {
-            font-family: 'Roboto Slab';
-            font-style: normal;
-            font-weight: 300;
-            font-display: swap;
-            src: url('./fonts/roboto-slab-v35-latin-300.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Roboto Slab';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url('./fonts/roboto-slab-v35-latin-400.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Roboto Slab';
-            font-style: normal;
-            font-weight: 700;
-            font-display: swap;
-            src: url('./fonts/roboto-slab-v35-latin-700.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 300;
-            font-display: swap;
-            src: url('./fonts/roboto-v48-latin-300.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url('./fonts/roboto-v48-latin-400.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 500;
-            font-display: swap;
-            src: url('./fonts/roboto-v48-latin-500.woff2') format('woff2');
-        }
-        
-        /* Inline critical CSS for CLS prevention */
-        body { font-family: 'Roboto', sans-serif; }
-        .hero { min-height: 400px; }
+      @font-face {
+        font-family: "Roboto Slab";
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url("./fonts/roboto-slab-v35-latin-300.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto Slab";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("./fonts/roboto-slab-v35-latin-400.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto Slab";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url("./fonts/roboto-slab-v35-latin-700.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url("./fonts/roboto-v48-latin-300.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("./fonts/roboto-v48-latin-400.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url("./fonts/roboto-v48-latin-500.woff2") format("woff2");
+      }
+
+      /* Inline critical CSS for CLS prevention */
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .hero {
+        min-height: 400px;
+      }
     </style>
 
     <!-- Load main CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css" />
 
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1e293b">
-</head>
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1e293b" />
+  </head>
 
-<body lang="en-US">
-    
+  <body lang="en-US">
     <!-- SVG Icon Definitions -->
-    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <symbol id="icon-calendar" viewBox="0 0 448 512">
-                <path d="M152 64h144V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32h48c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32zm248 336V160H48v240h352z"/>
-            </symbol>
-            <symbol id="icon-facebook" viewBox="0 0 448 512">
-                <path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"/>
-            </symbol>
-            <symbol id="icon-github" viewBox="0 0 496 512">
-                <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
-            </symbol>
-            <symbol id="icon-instagram" viewBox="0 0 448 512">
-                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-            </symbol>
-            <symbol id="icon-linkedin" viewBox="0 0 448 512">
-                <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
-            </symbol>
-            <symbol id="icon-stack-overflow" viewBox="0 0 384 512">
-                <path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/>
-            </symbol>
-            <symbol id="icon-envelope" viewBox="0 0 512 512">
-                <path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/>
-            </symbol>
-            <symbol id="icon-twitter" viewBox="0 0 512 512">
-                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
-            </symbol>
-            <symbol id="icon-rss" viewBox="0 0 448 512">
-                <path d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416zM32 160c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"/>
-            </symbol>
-            <symbol id="icon-briefcase" viewBox="0 0 512 512">
-                <path d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"/>
-            </symbol>
-        </defs>
+    <svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="icon-calendar" viewBox="0 0 448 512">
+          <path
+            d="M152 64h144V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32h48c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32zm248 336V160H48v240h352z"
+          />
+        </symbol>
+        <symbol id="icon-facebook" viewBox="0 0 448 512">
+          <path
+            d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"
+          />
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 496 512">
+          <path
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+          />
+        </symbol>
+        <symbol id="icon-instagram" viewBox="0 0 448 512">
+          <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+          />
+        </symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 448 512">
+          <path
+            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+          />
+        </symbol>
+        <symbol id="icon-stack-overflow" viewBox="0 0 384 512">
+          <path
+            d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"
+          />
+        </symbol>
+        <symbol id="icon-envelope" viewBox="0 0 512 512">
+          <path
+            d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"
+          />
+        </symbol>
+        <symbol id="icon-twitter" viewBox="0 0 512 512">
+          <path
+            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+          />
+        </symbol>
+        <symbol id="icon-rss" viewBox="0 0 448 512">
+          <path
+            d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416zM32 160c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+          />
+        </symbol>
+        <symbol id="icon-briefcase" viewBox="0 0 512 512">
+          <path
+            d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"
+          />
+        </symbol>
+      </defs>
     </svg>
 
     <!-- Navigation Header -->
     <nav class="navbar">
-        <div class="nav-brand">
-            <span class="brand-text">OS</span>
-        </div>
+      <div class="nav-brand">
+        <span class="brand-text">OS</span>
+      </div>
 
-        <button class="hamburger-menu" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <button class="nav-link">
-                    <svg class="icon-svg" style="width: 18px; height: 18px;"><use href="#icon-rss"></use></svg>
-                    Blogs & Writing
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="https://blog.stefanovskyi.com" target="_blank" rel="noopener">
-                        blog.stefanovskyi.com
-                    </a>
-                    <a class="dropdown-item" href="https://intelliarts.com/authors/oleksandr-stefanovskyi/" target="_blank" rel="noopener">
-                        Intelliarts Articles
-                    </a>
-                    <a class="dropdown-item" href="https://medium.com/@stefanovskyi" target="_blank" rel="noopener">
-                        Medium Profile
-                    </a>
-                    <a class="dropdown-item" href="https://dev.to/stefanovskyi" target="_blank" rel="noopener">
-                        Dev.to Profile
-                    </a>
-                    <a class="dropdown-item" href="newsletter/java/newsletter.html">
-                        Java Newsletter
-                    </a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link">
-                    <svg class="icon-svg" style="width: 18px; height: 18px;"><use href="#icon-briefcase"></use></svg>
-                    Projects
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="https://uplink.stefanovskyi.com/" target="_blank" rel="noopener">
-                        UPLINK
-                    </a>
-                    <a class="dropdown-item" href="https://flashcards.stefanovskyi.com/" target="_blank" rel="noopener">
-                        Flashcards Craft
-                    </a>
-                    <a class="dropdown-item" href="https://blog.stefanovskyi.com" target="_blank" rel="noopener">
-                        Personal Blog Project
-                    </a>
-                    <div class="dropdown-item disabled">
-                        More coming soon...
-                    </div>
-                </div>
-            </li>
-        </ul>
+      <button class="hamburger-menu" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-        <div class="nav-actions">
-            <a href="https://calendly.com/astefanovskiy/30min" target="_blank" rel="noopener" class="nav-cta-button">
-                Schedule Call
-                <svg class="icon-svg" style="width: 14px; height: 14px;"><use href="#icon-calendar"></use></svg> 
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="https://blog.stefanovskyi.com/posts/"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon-svg" style="width: 18px; height: 18px">
+              <use href="#icon-rss"></use>
+            </svg>
+            Blog
+          </a>
+
+        </li>
+        <li class="nav-item">
+          <button class="nav-link">
+            <svg class="icon-svg" style="width: 18px; height: 18px">
+              <use href="#icon-briefcase"></use>
+            </svg>
+            Projects
+          </button>
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item"
+              href="https://uplink.stefanovskyi.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              UPLINK
             </a>
-        </div>
+            <a
+              class="dropdown-item"
+              href="https://flashcards.stefanovskyi.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Flashcards Craft
+            </a>
+
+            <div class="dropdown-item disabled">More coming soon...</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <a
+          href="https://calendly.com/astefanovskiy/30min"
+          target="_blank"
+          rel="noopener"
+          class="nav-cta-button"
+        >
+          Schedule Call
+          <svg class="icon-svg" style="width: 14px; height: 14px">
+            <use href="#icon-calendar"></use>
+          </svg>
+        </a>
+      </div>
     </nav>
 
     <div class="container">
-        <!-- Hero Section -->
-        <header class="hero">
-            <a href="https://linkedin.com/in/oleksandr-stefanovskyi" target="_blank" rel="noopener" aria-label="View Oleksandr Stefanovskyi's LinkedIn profile">
-                <img src="/img/headshot.webp" alt="Oleksandr Stefanovskyi" class="headshot" loading="lazy" fetchpriority="high">
-            </a>
-            <h1 class="author">Oleksandr Stefanovskyi</h1>
-            <h3 class="intro">Strategic Technology Partner</h3>
-            
-            <p class="description">
-                I align tech plans with business goals and guide projects from first sketch to launch. 
-                I have led work that puts <span class="generative-ai">Generative AI</span> into production, training domain-specific models, building prompt workflows, and setting up secure deployment rails. 
-                I still design and scale microservice systems, practice test-driven development, and keep both engineers and senior leaders on the same page.
-            </p>
+      <!-- Hero Section -->
+      <header class="hero">
+        <a
+          href="https://linkedin.com/in/oleksandr-stefanovskyi"
+          target="_blank"
+          rel="noopener"
+          aria-label="View Oleksandr Stefanovskyi's LinkedIn profile"
+        >
+          <img
+            src="/img/headshot.webp"
+            alt="Oleksandr Stefanovskyi"
+            class="headshot"
+            loading="lazy"
+            fetchpriority="high"
+          />
+        </a>
+        <h1 class="author">Oleksandr Stefanovskyi</h1>
+        <h3 class="intro">Strategic Technology Partner</h3>
 
-            <div class="cta-section">
-                <div class="typewriter-container">
-                    <span>Let's Build</span>
-                    <span class="typewriter-text"></span>
-                    <span>Together</span>
-                </div>
-                
-                <a href="https://calendly.com/astefanovskiy/30min" target="_blank" rel="noopener" class="cta-button" aria-label="Schedule a 30-minute consultation call">
-                    <svg class="icon-svg" aria-hidden="true"><use href="#icon-calendar"></use></svg> 
-                    Schedule a Consultation
-                </a>
-            </div>
+        <p class="description">
+          I align tech plans with business goals and guide projects from first
+          sketch to launch. I have led work that puts
+          <span class="generative-ai">Generative AI</span> into production,
+          training domain-specific models, building prompt workflows, and
+          setting up secure deployment rails. I still design and scale
+          microservice systems, practice test-driven development, and keep both
+          engineers and senior leaders on the same page.
+        </p>
 
-            <div class="social-links">
-                <a id="ln-link" href="https://linkedin.com/in/oleksandr-stefanovskyi" target="_blank" rel="noopener" aria-label="Connect with Oleksandr Stefanovskyi on LinkedIn"><svg class="icon-svg" aria-hidden="true"><use href="#icon-linkedin"></use></svg></a>
-                <a id="em-link" href="mailto:oleksandr.stefanovskyi@gmail.com" target="_blank" rel="noopener" aria-label="Send email to Oleksandr Stefanovskyi"><svg class="icon-svg" aria-hidden="true"><use href="#icon-envelope"></use></svg></a>
-                <a id="gh-link" href="https://github.com/stefanovskyi" target="_blank" rel="noopener" aria-label="View Oleksandr Stefanovskyi's GitHub repositories"><svg class="icon-svg" aria-hidden="true"><use href="#icon-github"></use></svg></a>
-                <a id="tw-link" href="https://twitter.com/intent/follow?screen_name=ostefanovskyi" target="_blank" rel="noopener" aria-label="Follow Oleksandr Stefanovskyi on Twitter"><svg class="icon-svg" aria-hidden="true"><use href="#icon-twitter"></use></svg></a>
-                <a id="so-link" href="https://stackoverflow.com/users/2701230/oleksandr-stefanovskyi" target="_blank" rel="noopener" aria-label="View Oleksandr Stefanovskyi's Stack Overflow profile"><svg class="icon-svg" aria-hidden="true"><use href="#icon-stack-overflow"></use></svg></a>
-                <a id="fb-link" href="https://facebook.com/stefanovskyi" target="_blank" rel="noopener" aria-label="Visit Oleksandr Stefanovskyi's Facebook profile"><svg class="icon-svg" aria-hidden="true"><use href="#icon-facebook"></use></svg></a>
-                <a id="ig-link" href="https://instagram.com/stefanovskyi" target="_blank" rel="noopener" aria-label="Follow Oleksandr Stefanovskyi on Instagram"><svg class="icon-svg" aria-hidden="true"><use href="#icon-instagram"></use></svg></a>
-            </div>
-        </header>
+        <div class="cta-section">
+          <div class="typewriter-container">
+            <span>Let's Build</span>
+            <span class="typewriter-text"></span>
+            <span>Together</span>
+          </div>
 
-        <!-- Main Content Grid -->
-        <!-- 
+          <a
+            href="https://calendly.com/astefanovskiy/30min"
+            target="_blank"
+            rel="noopener"
+            class="cta-button"
+            aria-label="Schedule a 30-minute consultation call"
+          >
+            <svg class="icon-svg" aria-hidden="true">
+              <use href="#icon-calendar"></use>
+            </svg>
+            Schedule a Consultation
+          </a>
+        </div>
+
+        <div class="social-links">
+          <a
+            id="ln-link"
+            href="https://linkedin.com/in/oleksandr-stefanovskyi"
+            target="_blank"
+            rel="noopener"
+            aria-label="Connect with Oleksandr Stefanovskyi on LinkedIn"
+            ><svg class="icon-svg" aria-hidden="true">
+              <use href="#icon-linkedin"></use></svg
+          ></a>
+          <a
+            id="em-link"
+            href="mailto:oleksandr.stefanovskyi@gmail.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Send email to Oleksandr Stefanovskyi"
+            ><svg class="icon-svg" aria-hidden="true">
+              <use href="#icon-envelope"></use></svg
+          ></a>
+          <a
+            id="gh-link"
+            href="https://github.com/stefanovskyi"
+            target="_blank"
+            rel="noopener"
+            aria-label="View Oleksandr Stefanovskyi's GitHub repositories"
+            ><svg class="icon-svg" aria-hidden="true">
+              <use href="#icon-github"></use></svg
+          ></a>
+        </div>
+      </header>
+
+      <!-- Main Content Grid -->
+      <!-- 
         <main class="content-grid">
             <section class="card">
                 <div class="card-header">
@@ -305,269 +400,424 @@
         </main>
         -->
 
-        <!-- Reviews Section -->
-        <section class="reviews-section">
-            <div class="reviews-header">
-                <h2 class="reviews-title">What People Say</h2>
+      <!-- Reviews Section -->
+      <section class="reviews-section">
+        <div class="reviews-header">
+          <h2 class="reviews-title">What People Say</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Erez Segall -->
+          <a
+            href="https://www.linkedin.com/in/oleksandr-stefanovskyi/"
+            target="_blank"
+            rel="noopener"
+            class="review-card"
+            aria-label="Read Erez Segall's review on LinkedIn"
+          >
+            <svg class="icon-svg review-icon">
+              <use href="#icon-linkedin"></use>
+            </svg>
+            <div class="review-header">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D4E03AQE90RjvkiIabw/profile-displayphoto-crop_800_800/B4EZrw3ShDKUAI-/0/1764977617894?e=1770249600&v=beta&t=iwSs19thTzcMkGJMu9yvHkyXJ1GgT8WoWxdGeNFj9nw"
+                alt="Erez Segall"
+                class="review-avatar"
+                loading="lazy"
+              />
+              <div class="review-meta">
+                <h3 class="review-author">Erez Segall</h3>
+                <p class="review-role">VP of Engineering at Reprise</p>
+                <p class="review-date">January 20, 2026</p>
+              </div>
             </div>
-            
-            <div class="reviews-grid">
-                <!-- Erez Segall -->
-                <a href="https://www.linkedin.com/in/oleksandr-stefanovskyi/" target="_blank" rel="noopener" class="review-card" aria-label="Read Erez Segall's review on LinkedIn">
-                    <svg class="icon-svg review-icon"><use href="#icon-linkedin"></use></svg>
-                    <div class="review-header">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQE90RjvkiIabw/profile-displayphoto-crop_800_800/B4EZrw3ShDKUAI-/0/1764977617894?e=1770249600&v=beta&t=iwSs19thTzcMkGJMu9yvHkyXJ1GgT8WoWxdGeNFj9nw" 
-                             alt="Erez Segall" class="review-avatar" loading="lazy">
-                        <div class="review-meta">
-                            <h3 class="review-author">Erez Segall</h3>
-                            <p class="review-role">VP of Engineering at Reprise</p>
-                            <p class="review-date">January 20, 2026</p>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        I worked closely with Oleksandr during his time at Reprise and would highly recommend him for complex AI work. He built our AI service from the ground up and made it easy for our engineering teams to adopt and scale AI capabilities across the product.
-                        <br><br>
-                        Beyond being a strong engineer, Oleksandr is thoughtful, dependable, and a pleasure to work with. He takes ownership, communicates clearly, and consistently delivers. He would be a great addition to any team tackling meaningful technical challenges.
-                    </div>
-                    <span class="read-more">Read more</span>
-                </a>
-
-                <!-- Pavel Kirillov -->
-                <a href="https://www.linkedin.com/in/oleksandr-stefanovskyi/" target="_blank" rel="noopener" class="review-card" aria-label="Read Pavel Kirillov's review on LinkedIn">
-                    <svg class="icon-svg review-icon"><use href="#icon-linkedin"></use></svg>
-                    <div class="review-header">
-                        <img src="https://media.licdn.com/dms/image/v2/D5603AQFM3KRoy8ZUgg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1697045082696?e=1770249600&v=beta&t=OG59NIv2_unFauNt-NrNd5LNiL-sC9ndnWQyUFbO2kM" 
-                             alt="Pavel Kirillov" class="review-avatar" loading="lazy">
-                        <div class="review-meta">
-                            <h3 class="review-author">Pavel Kirillov</h3>
-                            <p class="review-role">CTO at NineTwoThree</p>
-                            <p class="review-date">July 2, 2025</p>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        I had the pleasure of working with Oleksandr Stefanovskiy for two years while he served as Head of ML Engineering at NineTwoThree. Together, we built out the ML practice from the ground up—before the ChatGPT hype cycle made AI everyone’s priority. Oleksandr hired and led a team of ML Engineers and Data Scientists, helped shape our internal process, and set the standard for how we draft proposals across different types of ML engagements—from early-stage discovery and feasibility studies to full production rollouts. He was also involved in the sales cycle and played a key role in helping us land and deliver complex AI projects. Personally, I learned a lot from him about how to manage ML work: stages, cadence, pitfalls, and best practices. He brings a strong sense of ownership, stays calm under pressure, and handles tough conversations without drama. Most importantly, he’s a sharp engineer who knows what he’s talking about. It was a real pleasure working together, and I’ll gladly do it again when our paths cross next.
-                    </div>
-                    <span class="read-more">Read more</span>
-                </a>
-
-                <!-- Shaul Teplinsky -->
-                <a href="https://www.linkedin.com/in/oleksandr-stefanovskyi/" target="_blank" rel="noopener" class="review-card" aria-label="Read Shaul Teplinsky's review on LinkedIn">
-                    <svg class="icon-svg review-icon"><use href="#icon-linkedin"></use></svg>
-                    <div class="review-header">
-                        <img src="https://media.licdn.com/dms/image/v2/C5603AQFkcKVP0vNeeQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516254065606?e=1770249600&v=beta&t=_nP55rAbkmRRtiF9iJj97n9cutLrPPVsFhNkWAAL_NI" 
-                             alt="Shaul Teplinsky" class="review-avatar" loading="lazy">
-                        <div class="review-meta">
-                            <h3 class="review-author">Shaul Teplinsky</h3>
-                            <p class="review-role">Founder and CEO at Boolean Logic LLC</p>
-                            <p class="review-date">June 24, 2025</p>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        I highly recommend Intelliarts and Oleksandr for AI-based software development. Their team demonstrated deep expertise in machine learning, clear communication, and a strong commitment to delivering high-quality results on time. They played a critical role in developing our AI-driven application, turning complex requirements into a scalable solution. A reliable and skilled outsourcing partner.
-                    </div>
-                    <span class="read-more">Read more</span>
-                </a>
-
-                <!-- Viacheslav Kucherenko -->
-                <a href="https://www.linkedin.com/in/oleksandr-stefanovskyi/" target="_blank" rel="noopener" class="review-card" aria-label="Read Viacheslav Kucherenko's review on LinkedIn">
-                    <svg class="icon-svg review-icon"><use href="#icon-linkedin"></use></svg>
-                    <div class="review-header">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQErfTuDuw5gkQ/profile-displayphoto-scale_100_100/B4DZuUu.M0GUAc-/0/1767726901006?e=1770249600&v=beta&t=Wa936RwNcZmNRatE7pt6zMxH4C5CRqclbWEU99qUyrg" 
-                             alt="Viacheslav Kucherenko" class="review-avatar" loading="lazy">
-                        <div class="review-meta">
-                            <h3 class="review-author">Viacheslav Kucherenko</h3>
-                            <p class="review-role">Nuclear Physicist</p>
-                            <p class="review-date">April 21, 2025</p>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        Oleksandr is a thoughtful and highly capable leader who fosters a collaborative and productive environment. I appreciated his ability to balance technical depth with clear communication, and to support the growth of each team member while keeping the broader goals in sight. I’m confident that any team would benefit from his experience and leadership.
-                    </div>
-                    <span class="read-more">Read more</span>
-                </a>
-
-                <!-- Nazarii Vysokinskyi -->
-                <a href="https://www.linkedin.com/in/oleksandr-stefanovskyi/" target="_blank" rel="noopener" class="review-card" aria-label="Read Nazarii Vysokinskyi's review on LinkedIn">
-                    <svg class="icon-svg review-icon"><use href="#icon-linkedin"></use></svg>
-                    <div class="review-header">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQG1QkpdVTvxpw/profile-displayphoto-shrink_100_100/B4EZWuwSj2HgAY-/0/1742393650260?e=1770249600&v=beta&t=o6ZMFbNMk1RIrEoyPpwGnRjnQdmI8xp4me80EXVKun0" 
-                             alt="Nazarii Vysokinskyi" class="review-avatar" loading="lazy">
-                        <div class="review-meta">
-                            <h3 class="review-author">Nazarii Vysokinskyi</h3>
-                            <p class="review-role">Founder of Failing Products | Data Scientist at MEGOGO</p>
-                            <p class="review-date">November 20, 2024</p>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        Oleksandr is a results-oriented professional with exemplary organizational skills. He's a highly focused communicator who ensures every discussion is purposeful and contributes to achieving team objectives. His thoughtful leadership fosters a culture of accountability, encouraging the team to consistently deliver high-quality results.
-                    </div>
-                    <span class="read-more">Read more</span>
-                </a>
-
-                <!-- Eugene Domeretskyi -->
-                <a href="https://www.linkedin.com/in/oleksandr-stefanovskyi/" target="_blank" rel="noopener" class="review-card" aria-label="Read Eugene Domeretskyi's review on LinkedIn">
-                    <svg class="icon-svg review-icon"><use href="#icon-linkedin"></use></svg>
-                    <div class="review-header">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQHKV2AE1BzmRg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1687809364583?e=1770249600&v=beta&t=KpffenAlO7wmpDbxw5-Tzu1Td5mBvsgVOpItALAZx9U" 
-                             alt="Eugene Domeretskyi" class="review-avatar" loading="lazy">
-                        <div class="review-meta">
-                            <h3 class="review-author">Eugene Domeretskyi</h3>
-                            <p class="review-role">Software engineer ● 8y in Tech ● Python ● Backend ● LLM. UCU bachelor ● Logistics, Healthcare domains</p>
-                            <p class="review-date">August 19, 2024</p>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        Patient, pays close attention to all details even the smallest. All work is well scooed and planned ahead. Therefore we can deliver high quality work within deadlines.
-                    </div>
-                    <span class="read-more">Read more</span>
-                </a>
-
-                <!-- Oleksii Babych -->
-                <a href="https://www.linkedin.com/in/oleksandr-stefanovskyi/" target="_blank" rel="noopener" class="review-card" aria-label="Read Oleksii Babych's review on LinkedIn">
-                    <svg class="icon-svg review-icon"><use href="#icon-linkedin"></use></svg>
-                    <div class="review-header">
-                        <img src="https://media.licdn.com/dms/image/v2/C5603AQHN559J_aM76w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1613578071017?e=1770249600&v=beta&t=V37T2JLt-peu0dpgEzjkA26Ae-_7uhD0DCuWg5UFzQk" 
-                             alt="Oleksii Babych" class="review-avatar" loading="lazy">
-                        <div class="review-meta">
-                            <h3 class="review-author">Oleksii Babych</h3>
-                            <p class="review-role">Machine Learning Engineer @ Dynamiq | AI & Research Enthusiast</p>
-                            <p class="review-date">May 2, 2024</p>
-                        </div>
-                    </div>
-                    <div class="review-body">
-                        Collaborating with Oleksandr has been truly transformative, given their expertise in software engineering and mastery in technologies such as Machine Learning and Generative AI. Oleksandr's strategic vision and adept leadership have enabled our diverse team to excel in complex machine learning projects, consistently delivering innovative and effective solutions. Under Oleksandr's guidance, our workspace thrived as a beacon of creativity and collaboration, fostering an atmosphere where each team member felt valued and inspired. Oleksandr's approach not only enhanced our productivity but also ensured client satisfaction through tailor-made, impactful solutions. I highly recommend Oleksandr for their unparalleled leadership in navigating the intricate landscape of data engineering and machine learning.
-                    </div>
-                    <span class="read-more">Read more</span>
-                </a>
+            <div class="review-body">
+              I worked closely with Oleksandr during his time at Reprise and
+              would highly recommend him for complex AI work. He built our AI
+              service from the ground up and made it easy for our engineering
+              teams to adopt and scale AI capabilities across the product.
+              <br /><br />
+              Beyond being a strong engineer, Oleksandr is thoughtful,
+              dependable, and a pleasure to work with. He takes ownership,
+              communicates clearly, and consistently delivers. He would be a
+              great addition to any team tackling meaningful technical
+              challenges.
             </div>
-        </section>
-        
-        <footer class="footer">
-            <h6 class="copyright">© <script>document.write(new Date().getFullYear())</script> Oleksandr Stefanovskyi</h6>
-        </footer>
+            <span class="read-more">Read more</span>
+          </a>
+
+          <!-- Pavel Kirillov -->
+          <a
+            href="https://www.linkedin.com/in/oleksandr-stefanovskyi/"
+            target="_blank"
+            rel="noopener"
+            class="review-card"
+            aria-label="Read Pavel Kirillov's review on LinkedIn"
+          >
+            <svg class="icon-svg review-icon">
+              <use href="#icon-linkedin"></use>
+            </svg>
+            <div class="review-header">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D5603AQFM3KRoy8ZUgg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1697045082696?e=1770249600&v=beta&t=OG59NIv2_unFauNt-NrNd5LNiL-sC9ndnWQyUFbO2kM"
+                alt="Pavel Kirillov"
+                class="review-avatar"
+                loading="lazy"
+              />
+              <div class="review-meta">
+                <h3 class="review-author">Pavel Kirillov</h3>
+                <p class="review-role">CTO at NineTwoThree</p>
+                <p class="review-date">July 2, 2025</p>
+              </div>
+            </div>
+            <div class="review-body">
+              I had the pleasure of working with Oleksandr Stefanovskiy for two
+              years while he served as Head of ML Engineering at NineTwoThree.
+              Together, we built out the ML practice from the ground up—before
+              the ChatGPT hype cycle made AI everyone’s priority. Oleksandr
+              hired and led a team of ML Engineers and Data Scientists, helped
+              shape our internal process, and set the standard for how we draft
+              proposals across different types of ML engagements—from
+              early-stage discovery and feasibility studies to full production
+              rollouts. He was also involved in the sales cycle and played a key
+              role in helping us land and deliver complex AI projects.
+              Personally, I learned a lot from him about how to manage ML work:
+              stages, cadence, pitfalls, and best practices. He brings a strong
+              sense of ownership, stays calm under pressure, and handles tough
+              conversations without drama. Most importantly, he’s a sharp
+              engineer who knows what he’s talking about. It was a real pleasure
+              working together, and I’ll gladly do it again when our paths cross
+              next.
+            </div>
+            <span class="read-more">Read more</span>
+          </a>
+
+          <!-- Shaul Teplinsky -->
+          <a
+            href="https://www.linkedin.com/in/oleksandr-stefanovskyi/"
+            target="_blank"
+            rel="noopener"
+            class="review-card"
+            aria-label="Read Shaul Teplinsky's review on LinkedIn"
+          >
+            <svg class="icon-svg review-icon">
+              <use href="#icon-linkedin"></use>
+            </svg>
+            <div class="review-header">
+              <img
+                src="https://media.licdn.com/dms/image/v2/C5603AQFkcKVP0vNeeQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516254065606?e=1770249600&v=beta&t=_nP55rAbkmRRtiF9iJj97n9cutLrPPVsFhNkWAAL_NI"
+                alt="Shaul Teplinsky"
+                class="review-avatar"
+                loading="lazy"
+              />
+              <div class="review-meta">
+                <h3 class="review-author">Shaul Teplinsky</h3>
+                <p class="review-role">Founder and CEO at Boolean Logic LLC</p>
+                <p class="review-date">June 24, 2025</p>
+              </div>
+            </div>
+            <div class="review-body">
+              I highly recommend Intelliarts and Oleksandr for AI-based software
+              development. Their team demonstrated deep expertise in machine
+              learning, clear communication, and a strong commitment to
+              delivering high-quality results on time. They played a critical
+              role in developing our AI-driven application, turning complex
+              requirements into a scalable solution. A reliable and skilled
+              outsourcing partner.
+            </div>
+            <span class="read-more">Read more</span>
+          </a>
+
+          <!-- Viacheslav Kucherenko -->
+          <a
+            href="https://www.linkedin.com/in/oleksandr-stefanovskyi/"
+            target="_blank"
+            rel="noopener"
+            class="review-card"
+            aria-label="Read Viacheslav Kucherenko's review on LinkedIn"
+          >
+            <svg class="icon-svg review-icon">
+              <use href="#icon-linkedin"></use>
+            </svg>
+            <div class="review-header">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D4D03AQErfTuDuw5gkQ/profile-displayphoto-scale_100_100/B4DZuUu.M0GUAc-/0/1767726901006?e=1770249600&v=beta&t=Wa936RwNcZmNRatE7pt6zMxH4C5CRqclbWEU99qUyrg"
+                alt="Viacheslav Kucherenko"
+                class="review-avatar"
+                loading="lazy"
+              />
+              <div class="review-meta">
+                <h3 class="review-author">Viacheslav Kucherenko</h3>
+                <p class="review-role">Nuclear Physicist</p>
+                <p class="review-date">April 21, 2025</p>
+              </div>
+            </div>
+            <div class="review-body">
+              Oleksandr is a thoughtful and highly capable leader who fosters a
+              collaborative and productive environment. I appreciated his
+              ability to balance technical depth with clear communication, and
+              to support the growth of each team member while keeping the
+              broader goals in sight. I’m confident that any team would benefit
+              from his experience and leadership.
+            </div>
+            <span class="read-more">Read more</span>
+          </a>
+
+          <!-- Nazarii Vysokinskyi -->
+          <a
+            href="https://www.linkedin.com/in/oleksandr-stefanovskyi/"
+            target="_blank"
+            rel="noopener"
+            class="review-card"
+            aria-label="Read Nazarii Vysokinskyi's review on LinkedIn"
+          >
+            <svg class="icon-svg review-icon">
+              <use href="#icon-linkedin"></use>
+            </svg>
+            <div class="review-header">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D4E03AQG1QkpdVTvxpw/profile-displayphoto-shrink_100_100/B4EZWuwSj2HgAY-/0/1742393650260?e=1770249600&v=beta&t=o6ZMFbNMk1RIrEoyPpwGnRjnQdmI8xp4me80EXVKun0"
+                alt="Nazarii Vysokinskyi"
+                class="review-avatar"
+                loading="lazy"
+              />
+              <div class="review-meta">
+                <h3 class="review-author">Nazarii Vysokinskyi</h3>
+                <p class="review-role">
+                  Founder of Failing Products | Data Scientist at MEGOGO
+                </p>
+                <p class="review-date">November 20, 2024</p>
+              </div>
+            </div>
+            <div class="review-body">
+              Oleksandr is a results-oriented professional with exemplary
+              organizational skills. He's a highly focused communicator who
+              ensures every discussion is purposeful and contributes to
+              achieving team objectives. His thoughtful leadership fosters a
+              culture of accountability, encouraging the team to consistently
+              deliver high-quality results.
+            </div>
+            <span class="read-more">Read more</span>
+          </a>
+
+          <!-- Eugene Domeretskyi -->
+          <a
+            href="https://www.linkedin.com/in/oleksandr-stefanovskyi/"
+            target="_blank"
+            rel="noopener"
+            class="review-card"
+            aria-label="Read Eugene Domeretskyi's review on LinkedIn"
+          >
+            <svg class="icon-svg review-icon">
+              <use href="#icon-linkedin"></use>
+            </svg>
+            <div class="review-header">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D4E03AQHKV2AE1BzmRg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1687809364583?e=1770249600&v=beta&t=KpffenAlO7wmpDbxw5-Tzu1Td5mBvsgVOpItALAZx9U"
+                alt="Eugene Domeretskyi"
+                class="review-avatar"
+                loading="lazy"
+              />
+              <div class="review-meta">
+                <h3 class="review-author">Eugene Domeretskyi</h3>
+                <p class="review-role">
+                  Software engineer ● 8y in Tech ● Python ● Backend ● LLM. UCU
+                  bachelor ● Logistics, Healthcare domains
+                </p>
+                <p class="review-date">August 19, 2024</p>
+              </div>
+            </div>
+            <div class="review-body">
+              Patient, pays close attention to all details even the smallest.
+              All work is well scooed and planned ahead. Therefore we can
+              deliver high quality work within deadlines.
+            </div>
+            <span class="read-more">Read more</span>
+          </a>
+
+          <!-- Oleksii Babych -->
+          <a
+            href="https://www.linkedin.com/in/oleksandr-stefanovskyi/"
+            target="_blank"
+            rel="noopener"
+            class="review-card"
+            aria-label="Read Oleksii Babych's review on LinkedIn"
+          >
+            <svg class="icon-svg review-icon">
+              <use href="#icon-linkedin"></use>
+            </svg>
+            <div class="review-header">
+              <img
+                src="https://media.licdn.com/dms/image/v2/C5603AQHN559J_aM76w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1613578071017?e=1770249600&v=beta&t=V37T2JLt-peu0dpgEzjkA26Ae-_7uhD0DCuWg5UFzQk"
+                alt="Oleksii Babych"
+                class="review-avatar"
+                loading="lazy"
+              />
+              <div class="review-meta">
+                <h3 class="review-author">Oleksii Babych</h3>
+                <p class="review-role">
+                  Machine Learning Engineer @ Dynamiq | AI & Research Enthusiast
+                </p>
+                <p class="review-date">May 2, 2024</p>
+              </div>
+            </div>
+            <div class="review-body">
+              Collaborating with Oleksandr has been truly transformative, given
+              their expertise in software engineering and mastery in
+              technologies such as Machine Learning and Generative AI.
+              Oleksandr's strategic vision and adept leadership have enabled our
+              diverse team to excel in complex machine learning projects,
+              consistently delivering innovative and effective solutions. Under
+              Oleksandr's guidance, our workspace thrived as a beacon of
+              creativity and collaboration, fostering an atmosphere where each
+              team member felt valued and inspired. Oleksandr's approach not
+              only enhanced our productivity but also ensured client
+              satisfaction through tailor-made, impactful solutions. I highly
+              recommend Oleksandr for their unparalleled leadership in
+              navigating the intricate landscape of data engineering and machine
+              learning.
+            </div>
+            <span class="read-more">Read more</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <h6 class="copyright">
+          ©
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Oleksandr Stefanovskyi
+        </h6>
+      </footer>
     </div>
-    
+
     <!-- Scripts -->
     <script src="/js/performance.js" defer></script>
-    
+
     <script defer>
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger-menu');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (hamburger && navMenu) {
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
+      // Mobile Menu Toggle
+      const hamburger = document.querySelector(".hamburger-menu");
+      const navMenu = document.querySelector(".nav-menu");
 
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }
-            });
+      if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        });
 
-            // Close menu when clicking a link
-            navMenu.querySelectorAll('a, button').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+          if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          }
+        });
+
+        // Close menu when clicking a link
+        navMenu.querySelectorAll("a, button").forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          });
+        });
+      }
+
+      // Check for review text truncation
+      function checkTruncation() {
+        const reviews = document.querySelectorAll(".review-card");
+        reviews.forEach((card) => {
+          const body = card.querySelector(".review-body");
+          if (body && body.scrollHeight > body.clientHeight) {
+            card.classList.add("is-truncated");
+          } else {
+            card.classList.remove("is-truncated");
+          }
+        });
+      }
+
+      // Run on load and resize
+      window.addEventListener("load", checkTruncation);
+      window.addEventListener("resize", checkTruncation);
+
+      // Also run after a short delay to ensure fonts/layout are stable
+      setTimeout(checkTruncation, 500);
+
+      // Typewriter Animation logic
+      const words = [
+        "AI Solutions",
+        "GenAI Tools",
+        "Smart Agents",
+        "AI Pipelines",
+        "Voice Agents",
+        "NLP Workflow",
+        "Data Copilot",
+        "AI Assistant",
+      ];
+
+      const textElement = document.querySelector(".typewriter-text");
+
+      // Configuration
+      const typingDelay = 100;
+      const erasingDelay = 50;
+      const newTextDelay = 2000; // Delay between current and next text
+
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function type() {
+        if (!textElement) return;
+
+        const currentWord = words[wordIndex];
+
+        if (isDeleting) {
+          // Erasing
+          textElement.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          // Typing
+          textElement.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
         }
 
-        // Check for review text truncation
-        function checkTruncation() {
-            const reviews = document.querySelectorAll('.review-card');
-            reviews.forEach(card => {
-                const body = card.querySelector('.review-body');
-                if (body && body.scrollHeight > body.clientHeight) {
-                    card.classList.add('is-truncated');
-                } else {
-                    card.classList.remove('is-truncated');
-                }
-            });
+        let typeSpeed = typingDelay;
+
+        if (isDeleting) {
+          typeSpeed = erasingDelay;
         }
 
-        // Run on load and resize
-        window.addEventListener('load', checkTruncation);
-        window.addEventListener('resize', checkTruncation);
-        
-        // Also run after a short delay to ensure fonts/layout are stable
-        setTimeout(checkTruncation, 500);
-
-        // Typewriter Animation logic
-        const words = [
-            "AI Solutions",
-            "GenAI Tools",
-            "Smart Agents",
-            "AI Pipelines",
-            "Voice Agents",
-            "NLP Workflow",
-            "Data Copilot",
-            "AI Assistant"
-        ];
-        
-        const textElement = document.querySelector('.typewriter-text');
-        
-        // Configuration
-        const typingDelay = 100;
-        const erasingDelay = 50;
-        const newTextDelay = 2000; // Delay between current and next text
-        
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            if (!textElement) return;
-
-            const currentWord = words[wordIndex];
-
-            if (isDeleting) {
-                // Erasing
-                textElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                // Typing
-                textElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = typingDelay;
-
-            if (isDeleting) {
-                typeSpeed = erasingDelay;
-            }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                // Finished typing word
-                typeSpeed = newTextDelay;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                // Finished erasing word
-                isDeleting = false;
-                wordIndex++;
-                if (wordIndex >= words.length) wordIndex = 0;
-                typeSpeed = 500;
-            }
-
-            setTimeout(type, typeSpeed);
+        if (!isDeleting && charIndex === currentWord.length) {
+          // Finished typing word
+          typeSpeed = newTextDelay;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          // Finished erasing word
+          isDeleting = false;
+          wordIndex++;
+          if (wordIndex >= words.length) wordIndex = 0;
+          typeSpeed = 500;
         }
 
-        // Initialize animation on load
-        if (words.length) {
-            document.addEventListener('DOMContentLoaded', () => {
-                setTimeout(type, newTextDelay + 250);
-            });
-        }
+        setTimeout(type, typeSpeed);
+      }
 
-        // Social pixel tracking (kept from original)
-        document.getElementById('fb-link')?.addEventListener('click', () => {
-             console.log('Facebook pixel tracking');
-        }, { once: true });
+      // Initialize animation on load
+      if (words.length) {
+        document.addEventListener("DOMContentLoaded", () => {
+          setTimeout(type, newTextDelay + 250);
+        });
+      }
+
+      // Social pixel tracking (kept from original)
+      document.getElementById("fb-link")?.addEventListener(
+        "click",
+        () => {
+          console.log("Facebook pixel tracking");
+        },
+        { once: true },
+      );
     </script>
-</body>
+  </body>
 </html>

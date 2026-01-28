@@ -197,6 +197,8 @@ h3.intro {
   justify-content: center;
   gap: 24px;
   margin-bottom: 80px;
+  position: relative;
+  z-index: 10;
 }
 
 .social-links a {
@@ -204,6 +206,10 @@ h3.intro {
   transition: all 0.2s ease;
   padding: 10px;
   border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   /* background: var(--surface-color); */
 }
 

@@ -1,510 +1,368 @@
 <!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Java Software Engineer's newsletter is a letter for busy engineers with most valuable weekly information">
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Resource hints for better performance -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
-    <!-- Optimized Google Tag Manager -->
+    <!-- Lazy-loaded Google Tag Manager for better performance -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GTM-KPKWZMD');
+      // Initialize dataLayer but defer GTM loading
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      // Lazy load GTM after user interaction or delay
+      let gtmLoaded = false;
+      const loadGTM = () => {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-KPKWZMD";
+        document.head.appendChild(script);
+
+        gtag("config", "GTM-KPKWZMD", {
+          page_title: "Newsletter | Java Software Engineer",
+          page_location: window.location.href,
+        });
+      };
+
+      // Load GTM on user interaction or after 3 seconds
+      const events = [
+        "mousedown",
+        "mousemove",
+        "keypress",
+        "scroll",
+        "touchstart",
+        "click",
+      ];
+      const loadGTMOnInteraction = () => {
+        loadGTM();
+        events.forEach((event) =>
+          document.removeEventListener(event, loadGTMOnInteraction, true),
+        );
+      };
+
+      events.forEach((event) =>
+        document.addEventListener(event, loadGTMOnInteraction, true),
+      );
+      setTimeout(loadGTM, 3000); // Fallback after 3 seconds
     </script>
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KPKWZMD" defer></script>
 
-    <link rel="manifest" href="https://themes.gohugo.io/theme/minimal-bootstrap-hugo-theme/site.webmanifest">
-    <link rel="mask-icon" href="https://themes.gohugo.io/theme/minimal-bootstrap-hugo-theme/safari-pinned-tab.svg" color="#5bbad5">
+    <meta
+      name="description"
+      content="Java Software Engineer's newsletter is a letter for busy engineers with most valuable weekly information"
+    />
+    <meta
+      name="keywords"
+      content="Oleksandr Stefanovskyi, Stefanovskyi, Java, Newsletter, Software Engineer, Technology"
+    />
 
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
-    <link rel="stylesheet" href="https://themes.gohugo.io/theme/minimal-bootstrap-hugo-theme/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/v4-shims.css">
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="bfcache" content="allowed" />
 
     <title>Newsletter | Java Software Engineer</title>
 
+    <!-- Local Font Declarations -->
     <style>
-        body {
-            min-width: 300px;
-        }
+      @font-face {
+        font-family: "Roboto Slab";
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url("../../fonts/roboto-slab-v35-latin-300.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto Slab";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../../fonts/roboto-slab-v35-latin-400.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto Slab";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url("../../fonts/roboto-slab-v35-latin-700.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url("../../fonts/roboto-v48-latin-300.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../../fonts/roboto-v48-latin-400.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url("../../fonts/roboto-v48-latin-500.woff2") format("woff2");
+      }
 
-        .custom-navbar {
-            margin-bottom: 1em;
-            height: 60px;
-        }
-
-        .custom-navbar a {
-            display: inline-block;
-            padding: 18px 0;
-            margin-right: 1em;
-            font-weight: bold;
-        }
-
-        .custom-navbar a:hover,
-        .custom-navbar a:focus {
-            text-decoration: none;
-        }
-
-        @media print {
-            .custom-navbar {
-                display: none;
-            }
-        }
-
-        article {
-            padding-bottom: 1em;
-            padding-left: 1em;
-            background-color: rgba(196, 213, 224, 0.06);
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        body {
-            background-color: #fff;
-        }
-
-        body {
-            color: #212529;
-        }
-
-        a {
-            color: rgba(25, 25, 99, 0.87);
-        }
-
-        a:hover,
-        a:focus {
-            color: rgba(187, 86, 27, 0.81);
-        }
-
-        .custom-navbar {
-            background-color: #212529;
-        }
-
-        .custom-navbar a {
-            color: rgba(255, 255, 255, 0.75);
-        }
-
-        .custom-navbar a:hover,
-        .custom-navbar a:focus {
-            color: rgba(255, 255, 255, 1);
-        }
-
-        .container {
-            max-width: 800px;
-        }
-
-        pre {
-            display: block;
-            padding: 9.5px;
-            word-break: break-all;
-            word-wrap: break-word;
-            background-color: #f5f5f5;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        pre code {
-            padding: 0;
-            font-size: inherit;
-            color: inherit;
-            white-space: pre-wrap;
-            background-color: transparent;
-            border: none;
-            border-radius: 0;
-        }
-
-        code {
-            padding: 2px 4px;
-            color: inherit;
-            background-color: #f5f5f5;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: .9em;
-        }
-
-        blockquote,
-        .blockquote {
-            padding: 10px 20px;
-            margin: 0 0 20px;
-            font-size: 1em;
-            border-left: 5px solid #6c757d;
-        }
-
-        /* The Modal (background) */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-
-        /* Modal Content */
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 60%;
-        }
-
-        /* The Close Button */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .button {
-            display: inline-block;
-            border-radius: 4px;
-            background-color: #fefefe;
-            border: none;
-            color: #000000;
-            text-align: center;
-            transition: all 0.5s;
-            cursor: pointer;
-        }
-        *{padding:0;margin:0;}
-
-        .float{
-            position:fixed;
-            width:60px;
-            height:60px;
-            bottom:40px;
-            right:40px;
-            background-color:#0C9;
-            color:#FFF;
-            border-radius:50px;
-            text-align:center;
-            box-shadow: 2px 2px 3px #999;
-        }
-
-        .latest-issue {
-            color: #c40000;
-            font-size: 1.5em;
-        }
-
-        .issue-2020 {
-            color: #000000;
-            margin-right: 0.5em;
-            font-size: 1.5em;
-        }
-
-        .issue-2019 {
-            color: #577298;
-            margin-right: 0.5em;
-            font-size: 1.5em;
-        }
-
-        .my-float {
-            margin-top:22px;
-        }
-
-        .copyright {
-            font-family: 'Roboto', sans-serif;
-            font-size: 12px;
-            font-weight: 200;
-        }
-
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: #bbb;
-            text-align: center;
-        }
+      /* Inline critical CSS for CLS prevention */
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .hero {
+        min-height: 200px;
+      }
     </style>
-    <style type="text/css">
-        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-    </style>
-</head>
 
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPKWZMD"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<nav class="custom-navbar">
+    <!-- Load main CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16" />
+    <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#1e293b" />
+  </head>
+
+  <body lang="en-US">
+    <!-- SVG Icon Definitions -->
+    <svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="icon-calendar" viewBox="0 0 448 512">
+          <path
+            d="M152 64h144V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32h48c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32zm248 336V160H48v240h352z"
+          />
+        </symbol>
+        <symbol id="icon-rss" viewBox="0 0 448 512">
+          <path
+            d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416zM32 160c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+          />
+        </symbol>
+        <symbol id="icon-briefcase" viewBox="0 0 512 512">
+          <path
+            d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"
+          />
+        </symbol>
+        <symbol id="icon-link" viewBox="0 0 512 512">
+          <path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.025 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.87 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.27 59.27-155.699.001-214.959z"/>
+        </symbol>
+      </defs>
+    </svg>
+
+    <!-- Navigation Header -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <a href="../../" style="text-decoration: none;">
+            <span class="brand-text">OS</span>
+        </a>
+      </div>
+
+      <button class="hamburger-menu" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="https://blog.stefanovskyi.com/posts/"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon-svg" style="width: 18px; height: 18px">
+              <use href="#icon-rss"></use>
+            </svg>
+            Blog
+          </a>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link">
+            <svg class="icon-svg" style="width: 18px; height: 18px">
+              <use href="#icon-briefcase"></use>
+            </svg>
+            Projects
+          </button>
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item"
+              href="https://uplink.stefanovskyi.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              UPLINK
+            </a>
+            <a
+              class="dropdown-item"
+              href="https://flashcards.stefanovskyi.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Flashcards Craft
+            </a>
+            <div class="dropdown-item disabled">More coming soon...</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <a
+          href="https://calendly.com/astefanovskiy/30min"
+          target="_blank"
+          rel="noopener"
+          class="nav-cta-button"
+        >
+          Schedule Call
+          <svg class="icon-svg" style="width: 14px; height: 14px">
+            <use href="#icon-calendar"></use>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
     <div class="container">
-        <a href="https://stefanovskyi.com/"><h4>stefanovskyi.com</h4></a>
-        <a href="https://twitter.com/intent/follow?screen_name=ostefanovskyi" target="_blank" rel="noopener"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a href="https://t.me/JavaNewsletter" target="_blank" rel="noopener"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a>
-        <button class="float" id="myBtn"><em style="font-size: 30px" class="far fa-envelope"></em></button>
+      <!-- Header -->
+      <header class="hero" style="margin-bottom: 40px; min-height: auto;">
+        <h1 class="author" style="font-size: 2.5rem;">Java Software Engineer's Newsletter</h1>
+        <h3 class="intro" style="font-size: 1rem; margin-top: 10px;">Archive 2020</h3>
+      </header>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <!-- Begin Mailchimp Signup Form -->
-                <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-
-                <div id="mc_embed_signup">
-                    <form action="https://stefanovskyi.us15.list-manage.com/subscribe/post?u=aec359fa5922c3dde7e220c02&amp;id=572bd601ce"
-                          method="post" id="mc-embedded-subscribe-form"
-                          name="mc-embedded-subscribe-form"
-                          class="validate"
-                          target="_blank" novalidate>
-
-                        <div id="mc_embed_signup_scroll">
-                            <h2>Subscribe</h2>
-                            <div class="mc-field-group">
-                                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                            </div>
-
-                            <div id="mce-responses" class="clear">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_aec359fa5922c3dde7e220c02_572bd601ce" tabindex="-1" value=""></div>
-                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                        </div>
-                    </form>
-                </div>
-                <!--End mc_embed_signup-->
+      <!-- Main Content -->
+      <main class="content-grid" style="grid-template-columns: 1fr;">
+        <section class="card">
+            <div class="card-header">
+                <svg class="icon-svg" style="width: 24px; height: 24px;"><use href="#icon-rss"></use></svg>
+                <h2 class="card-title">Issues</h2>
             </div>
-        </div>
+            <div class="link-list">
+                <a class="link-item" href="https://bit.ly/3e8znTY" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Problem-solving skills for a developer</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 21, Issue 044 (May 24, 2020)</span>
+                </a>
+                <a class="link-item" href="https://bit.ly/2zHajVp" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Learning yet another Programming Language</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 20, Issue 043 (May 17, 2020)</span>
+                </a>
+                <a class="link-item" href="https://bit.ly/3bkfUhp" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">How to build a breakthrough</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 19, Issue 042 (May 10, 2020)</span>
+                </a>
+                <a class="link-item" href="https://bit.ly/3fah6qJ" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Approximately correct</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 18, Issue 041 (May 3, 2020)</span>
+                </a>
+                <a class="link-item" href="https://bit.ly/2zyGAOj" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Stop trying to change yourself</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 17, Issue 040 (Apr 27, 2020)</span>
+                </a>
+                <a class="link-item" href="https://bit.ly/3bnHhrz" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">John Conway</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 16, Issue 039 (Apr 20, 2020)</span>
+                </a>
+                <a class="link-item" href="https://bit.ly/2UZQd0t" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Fail fast</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 15, Issue 038 (Apr 13, 2020)</span>
+                </a>
+                <a class="link-item" href="https://bit.ly/3dOj7bo" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Communication with the Client</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 14, Issue 037 (Apr 6, 2020)</span>
+                </a>
+                <a class="link-item" href="https://bit.ly/33RkmCf" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Rapidly changing World</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 13, Issue 036 (Mar 30, 2020)</span>
+                </a>
+                <a class="link-item" href="https://bit.ly/2y1FJ83" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">WFH - is it the new normal?</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 12, Issue 035 (Mar 23, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2IMPA3B" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">WFH</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 11, Issue 034 (Mar 16, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2IuRQwn" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Save a Dying, Low-Morale Team</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 10, Issue 033 (Mar 2, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2IbZefL" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Software Engineering and its problems</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 9, Issue 032 (Mar 2, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2SSWytS" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">1-on-1 meeting questions and 23 rules to run startup</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 8, Issue 031 (Feb 24, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/37zJzRG" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">You can have two Big Things, but not three</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 7, Issue 030 (Feb 17, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2HakDW8" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Normalization of Deviance</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 6, Issue 029 (Feb 10, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2ScpVWx" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">How Will You Measure Your Life?</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 5, Issue 028 (Feb 3, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/3aL3oZg" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Work is work</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 4, Issue 027 (Jan 27, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2NKIu2k" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Your first 90 days as CTO or VP Engineering</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 3, Issue 026 (Jan 21, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2RdUsm6" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Developer's productivity</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 2, Issue 025 (Jan 13, 2020)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/37AU8UY" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">The Three Levels of Self-Awareness</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 1, Issue 024 (Jan 6, 2020)</span>
+                </a>
+            </div>
+            
+            <div style="margin-top: 30px; text-align: center;">
+                 <a href="newsletter-2019.html" class="cta-button" style="text-decoration: none; display: inline-flex;">
+                    <svg class="icon-svg" style="width: 20px; height: 20px; margin-right: 8px;"><use href="#icon-link"></use></svg>
+                    2019 Archive
+                 </a>
+            </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <h6 class="copyright">
+          © <script>document.write(new Date().getFullYear())</script> Oleksandr Stefanovskyi
+        </h6>
+      </footer>
     </div>
-</nav>
 
-<div class="container">
-    <article>
-        <h1>Java Software Engineer's newsletter</h1>
-        <p>
-            <a href="https://bit.ly/3e8znTY">
-                <em class="fas fa-meteor latest-issue issue-2020"></em>
-                <strong>Problem-solving skills for a developer — (JSEWN-S2E21)</strong> - week 21, Issue 044
-            </a>
-            <br>
-            <small class="text-secondary">May 24, 2020</small>
-        </p>
-        <p>
-            <a href="https://bit.ly/2zHajVp">
-                <em class="fas fa-meteor latest-issue issue-2020"></em>
-                <strong>Learning yet another Programming Language — (JSEWN-S2E20)</strong> - week 20, Issue 043
-            </a>
-            <br>
-            <small class="text-secondary">May 17, 2020</small>
-        </p>
-        <p>
-            <a href="https://bit.ly/3bkfUhp">
-                <em class="fas fa-meteor latest-issue issue-2020"></em>
-                <strong>How to build a breakthrough — (JSEWN-S2E19)</strong> - week 19, Issue 042
-            </a>
-            <br>
-            <small class="text-secondary">May 10, 2020</small>
-        </p>
-        <p>
-            <a href="https://bit.ly/3fah6qJ">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>Approximately correct — (JSEWN-S2E18)</strong> - week 18, Issue 041
-            </a>
-            <br>
-            <small class="text-secondary">May 3, 2020</small>
-        </p>
-        <p>
-            <a href="https://bit.ly/2zyGAOj">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>Stop trying to change yourself — (JSEWN-S2E17)</strong> - week 17, Issue 040
-            </a>
-            <br>
-            <small class="text-secondary">Apr 27, 2020</small>
-        </p>
-        <p>
-            <a href="https://bit.ly/3bnHhrz">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>John Conway — (JSEWN-S2E16)</strong> - week 16, Issue 039
-            </a>
-            <br>
-            <small class="text-secondary">Apr 20, 2020</small>
-        </p>
-        <p>
-            <a href="https://bit.ly/2UZQd0t">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>Fail fast — (JSEWN-S2E15)</strong> - week 15, Issue 038
-            </a>
-            <br>
-            <small class="text-secondary">Apr 13, 2020</small>
-        </p>
-        <p>
-            <a href="https://bit.ly/3dOj7bo">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>Communication with the Client — (JSEWN-S2E14)</strong> - week 14, Issue 037
-            </a>
-            <br>
-            <small class="text-secondary">Apr 6, 2020</small>
-        </p>
-         <p>
-            <a href="https://bit.ly/33RkmCf">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>Rapidly changing World — (JSEWN-S2E13)</strong> - week 13, Issue 036
-            </a>
-            <br>
-            <small class="text-secondary">Mar 30, 2020</small>
-        </p>
-         <p>
-            <a href="https://bit.ly/2y1FJ83">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>WFH - is it the new normal? — (JSEWN-S2E12)</strong> - week 12, Issue 035
-            </a>
-            <br>
-            <small class="text-secondary">Mar 23, 2020</small>
-        </p>
-         <p>
-            <a href="http://bit.ly/2IMPA3B">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>WFH — (JSEWN-S2E11)</strong> - week 11, Issue 034
-            </a>
-            <br>
-            <small class="text-secondary">Mar 16, 2020</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2IuRQwn">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>Save a Dying, Low-Morale Team — (JSEWN-S2E10)</strong> - week 10, Issue 033
-            </a>
-            <br>
-            <small class="text-secondary">Mar 2, 2020</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2IbZefL">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>Software Engineering and its problems — (JSEWN-S2E9)</strong> - week 9, Issue 032
-            </a>
-            <br>
-            <small class="text-secondary">Mar 2, 2020</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2SSWytS">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>1-on-1 meeting questions and 23 rules to run startup</strong> - week 8, Issue 031
-            </a>
-            <br>
-            <small class="text-secondary">Feb 24, 2020</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/37zJzRG">
-                <em class="fas fa-meteor issue-2020"></em>
-                <strong>You can have two Big Things, but not three</strong> - week 7, Issue 030
-            </a>
-            <br>
-            <small class="text-secondary">Feb 17, 2020</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2HakDW8">
-                <em class="fas fa-globe-americas issue-2020"></em>
-                <strong>Normalization of Deviance</strong> - week 6, Issue 029
-            </a>
-            <br>
-            <small class="text-secondary">Feb 10, 2020</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2ScpVWx">
-                <em class="fas fa-globe-americas issue-2020"></em>
-                <strong>How Will You Measure Your Life?</strong> - week 5, Issue 028
-            </a>
-            <br>
-            <small class="text-secondary">Feb 3, 2020</small>
-        </p>         
-        <p>
-            <a href="http://bit.ly/3aL3oZg">
-                <em class="fas fa-globe-americas issue-2020"></em>
-                <strong>Work is work</strong> - week 4, Issue 027
-            </a>
-            <br>
-            <small class="text-secondary">Jan 27, 2020</small>
-        </p>      
-        <p>
-            <a href="http://bit.ly/2NKIu2k">
-                <em class="fas fa-globe-americas issue-2020"></em>
-                <strong>Your first 90 days as CTO or VP Engineering.</strong> - week 3, Issue 026
-            </a>
-            <br>
-            <small class="text-secondary">Jan 21, 2020</small>
-        </p> 
-        <p>
-            <a href="http://bit.ly/2RdUsm6">
-                <em class="fas fa-globe-americas issue-2020"></em>
-                <strong>Developer's productivity</strong> - week 2, Issue 025
-            </a>
-            <br>
-            <small class="text-secondary">Jan 13, 2020</small>
-        </p>  
-        <p>
-            <a href="http://bit.ly/37AU8UY">
-                <em class="fas fa-globe-americas issue-2020"></em>
-                <strong>The Three Levels of Self-Awareness</strong> - week 1, Issue 024
-            </a>
-            <br>
-            <small class="text-secondary">Jan 6, 2020</small>
-        </p>
-        <div align="center" style="margin-bottom: 50px">
-            <a href="newsletter-2019.html">
-                2019
-            </a>
-        </div>
-    </article>
-</div>
-<footer class="footer">
-    <h6 class="text-center copyright">© 2020. Oleksandr Stefanovskyi</h6>
-</footer>
+    <!-- Scripts -->
+    <script src="../../js/performance.js" defer></script>
 
-<script>
-    // Get the modal
-    var modal = document.getElementById("myModal");
+    <script defer>
+      // Mobile Menu Toggle
+      const hamburger = document.querySelector(".hamburger-menu");
+      const navMenu = document.querySelector(".nav-menu");
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+      if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        });
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+          if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          }
+        });
 
-    // When the user clicks the button, open the modal
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
-</body>
+        // Close menu when clicking a link
+        navMenu.querySelectorAll("a, button").forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          });
+        });
+      }
+    </script>
+  </body>
 </html>

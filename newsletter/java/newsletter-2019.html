@@ -1,536 +1,374 @@
 <!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Java Software Engineer's newsletter is a letter for busy engineers with most valuable weekly information">
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Resource hints for better performance -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
-    <!-- Optimized Google Tag Manager -->
+    <!-- Lazy-loaded Google Tag Manager for better performance -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GTM-KPKWZMD');
+      // Initialize dataLayer but defer GTM loading
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      // Lazy load GTM after user interaction or delay
+      let gtmLoaded = false;
+      const loadGTM = () => {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-KPKWZMD";
+        document.head.appendChild(script);
+
+        gtag("config", "GTM-KPKWZMD", {
+          page_title: "Newsletter 2019 | Java Software Engineer",
+          page_location: window.location.href,
+        });
+      };
+
+      // Load GTM on user interaction or after 3 seconds
+      const events = [
+        "mousedown",
+        "mousemove",
+        "keypress",
+        "scroll",
+        "touchstart",
+        "click",
+      ];
+      const loadGTMOnInteraction = () => {
+        loadGTM();
+        events.forEach((event) =>
+          document.removeEventListener(event, loadGTMOnInteraction, true),
+        );
+      };
+
+      events.forEach((event) =>
+        document.addEventListener(event, loadGTMOnInteraction, true),
+      );
+      setTimeout(loadGTM, 3000); // Fallback after 3 seconds
     </script>
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KPKWZMD" defer></script>
 
-    <link rel="manifest" href="https://themes.gohugo.io/theme/minimal-bootstrap-hugo-theme/site.webmanifest">
-    <link rel="mask-icon" href="https://themes.gohugo.io/theme/minimal-bootstrap-hugo-theme/safari-pinned-tab.svg" color="#5bbad5">
+    <meta
+      name="description"
+      content="Java Software Engineer's newsletter 2019 archive"
+    />
+    <meta
+      name="keywords"
+      content="Oleksandr Stefanovskyi, Stefanovskyi, Java, Newsletter, Software Engineer, Technology, 2019"
+    />
 
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="bfcache" content="allowed" />
 
-    <link rel="stylesheet" href="https://themes.gohugo.io/theme/minimal-bootstrap-hugo-theme/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/v4-shims.css">
+    <title>Newsletter 2019 | Java Software Engineer</title>
 
-    <title>Newsletter | Java Software Engineer</title>
-
+    <!-- Local Font Declarations -->
     <style>
-        body {
-            min-width: 300px;
-        }
+      @font-face {
+        font-family: "Roboto Slab";
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url("../../fonts/roboto-slab-v35-latin-300.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto Slab";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../../fonts/roboto-slab-v35-latin-400.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto Slab";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url("../../fonts/roboto-slab-v35-latin-700.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url("../../fonts/roboto-v48-latin-300.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../../fonts/roboto-v48-latin-400.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url("../../fonts/roboto-v48-latin-500.woff2") format("woff2");
+      }
 
-        .custom-navbar {
-            margin-bottom: 1em;
-            height: 60px;
-        }
-
-        .custom-navbar a {
-            display: inline-block;
-            padding: 18px 0;
-            margin-right: 1em;
-            font-weight: bold;
-        }
-
-        .custom-navbar a:hover,
-        .custom-navbar a:focus {
-            text-decoration: none;
-        }
-
-        @media print {
-            .custom-navbar {
-                display: none;
-            }
-        }
-
-        article {
-            padding-bottom: 1em;
-            padding-left: 1em;
-            background-color: rgba(196, 213, 224, 0.06);
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        body {
-            background-color: #fff;
-        }
-
-        body {
-            color: #212529;
-        }
-
-        a {
-            color: rgba(25, 25, 99, 0.87);
-        }
-
-        a:hover,
-        a:focus {
-            color: rgba(187, 86, 27, 0.81);
-        }
-
-        .custom-navbar {
-            background-color: #212529;
-        }
-
-        .custom-navbar a {
-            color: rgba(255, 255, 255, 0.75);
-        }
-
-        .custom-navbar a:hover,
-        .custom-navbar a:focus {
-            color: rgba(255, 255, 255, 1);
-        }
-
-        .container {
-            max-width: 800px;
-        }
-
-        pre {
-            display: block;
-            padding: 9.5px;
-            word-break: break-all;
-            word-wrap: break-word;
-            background-color: #f5f5f5;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        pre code {
-            padding: 0;
-            font-size: inherit;
-            color: inherit;
-            white-space: pre-wrap;
-            background-color: transparent;
-            border: none;
-            border-radius: 0;
-        }
-
-        code {
-            padding: 2px 4px;
-            color: inherit;
-            background-color: #f5f5f5;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: .9em;
-        }
-
-        blockquote,
-        .blockquote {
-            padding: 10px 20px;
-            margin: 0 0 20px;
-            font-size: 1em;
-            border-left: 5px solid #6c757d;
-        }
-
-        /* The Modal (background) */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-
-        /* Modal Content */
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 60%;
-        }
-
-        /* The Close Button */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .button {
-            display: inline-block;
-            border-radius: 4px;
-            background-color: #fefefe;
-            border: none;
-            color: #000000;
-            text-align: center;
-            transition: all 0.5s;
-            cursor: pointer;
-        }
-        *{padding:0;margin:0;}
-
-        .float{
-            position:fixed;
-            width:60px;
-            height:60px;
-            bottom:40px;
-            right:40px;
-            background-color:#0C9;
-            color:#FFF;
-            border-radius:50px;
-            text-align:center;
-            box-shadow: 2px 2px 3px #999;
-        }
-
-        .latest-issue {
-            color: #c40000;
-            font-size: 1.5em;
-        }
-
-        .issue-2020 {
-            color: #000000;
-            margin-right: 0.5em;
-            font-size: 1.5em;
-        }
-
-        .issue-2019 {
-            color: #577298;
-            margin-right: 0.5em;
-            font-size: 1.5em;
-        }
-
-        .my-float {
-            margin-top:22px;
-        }
-
-        .copyright {
-            font-family: 'Roboto', sans-serif;
-            font-size: 12px;
-            font-weight: 200;
-        }
-
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: #bbb;
-            text-align: center;
-        }
+      /* Inline critical CSS for CLS prevention */
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .hero {
+        min-height: 200px;
+      }
     </style>
-    <style type="text/css">
-        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-    </style>
-</head>
 
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPKWZMD"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<nav class="custom-navbar">
+    <!-- Load main CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <link rel="icon" type="image/png" href="../../favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../../favicon-16x16.png" sizes="16x16" />
+    <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#1e293b" />
+  </head>
+
+  <body lang="en-US">
+    <!-- SVG Icon Definitions -->
+    <svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="icon-calendar" viewBox="0 0 448 512">
+          <path
+            d="M152 64h144V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32h48c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32zm248 336V160H48v240h352z"
+          />
+        </symbol>
+        <symbol id="icon-rss" viewBox="0 0 448 512">
+          <path
+            d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416zM32 160c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+          />
+        </symbol>
+        <symbol id="icon-briefcase" viewBox="0 0 512 512">
+          <path
+            d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"
+          />
+        </symbol>
+        <symbol id="icon-arrow-left" viewBox="0 0 448 512">
+          <path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/>
+        </symbol>
+      </defs>
+    </svg>
+
+    <!-- Navigation Header -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <a href="../../" style="text-decoration: none;">
+            <span class="brand-text">OS</span>
+        </a>
+      </div>
+
+      <button class="hamburger-menu" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="https://blog.stefanovskyi.com/posts/"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon-svg" style="width: 18px; height: 18px">
+              <use href="#icon-rss"></use>
+            </svg>
+            Blog
+          </a>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link">
+            <svg class="icon-svg" style="width: 18px; height: 18px">
+              <use href="#icon-briefcase"></use>
+            </svg>
+            Projects
+          </button>
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item"
+              href="https://uplink.stefanovskyi.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              UPLINK
+            </a>
+            <a
+              class="dropdown-item"
+              href="https://flashcards.stefanovskyi.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Flashcards Craft
+            </a>
+            <div class="dropdown-item disabled">More coming soon...</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <a
+          href="https://calendly.com/astefanovskiy/30min"
+          target="_blank"
+          rel="noopener"
+          class="nav-cta-button"
+        >
+          Schedule Call
+          <svg class="icon-svg" style="width: 14px; height: 14px">
+            <use href="#icon-calendar"></use>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
     <div class="container">
-        <a href="https://stefanovskyi.com/"><h4>stefanovskyi.com</h4></a>
-        <a href="https://twitter.com/intent/follow?screen_name=ostefanovskyi" target="_blank" rel="noopener"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a href="https://t.me/JavaNewsletter" target="_blank" rel="noopener"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a>
-        <button class="float" id="myBtn"><em style="font-size: 30px" class="far fa-envelope"></em></button>
+      <!-- Header -->
+      <header class="hero" style="margin-bottom: 40px; min-height: auto;">
+        <h1 class="author" style="font-size: 2.5rem;">Java Software Engineer's Newsletter</h1>
+        <h3 class="intro" style="font-size: 1rem; margin-top: 10px;">Archive 2019</h3>
+      </header>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <!-- Begin Mailchimp Signup Form -->
-                <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-
-                <div id="mc_embed_signup">
-                    <form action="https://stefanovskyi.us15.list-manage.com/subscribe/post?u=aec359fa5922c3dde7e220c02&amp;id=572bd601ce"
-                          method="post" id="mc-embedded-subscribe-form"
-                          name="mc-embedded-subscribe-form"
-                          class="validate"
-                          target="_blank" novalidate>
-
-                        <div id="mc_embed_signup_scroll">
-                            <h2>Subscribe</h2>
-                            <div class="mc-field-group">
-                                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                            </div>
-
-                            <div id="mce-responses" class="clear">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_aec359fa5922c3dde7e220c02_572bd601ce" tabindex="-1" value=""></div>
-                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                        </div>
-                    </form>
-                </div>
-                <!--End mc_embed_signup-->
+      <!-- Main Content -->
+      <main class="content-grid" style="grid-template-columns: 1fr;">
+        <section class="card">
+            <div class="card-header">
+                <svg class="icon-svg" style="width: 24px; height: 24px;"><use href="#icon-rss"></use></svg>
+                <h2 class="card-title">Issues</h2>
             </div>
-        </div>
+            <div class="link-list">
+                <a class="link-item" href="http://bit.ly/39nErSX" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Java 14</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 52, Issue 023 (Dec 30, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2ELhP0y" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Books recommendations</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 51, Issue 022 (Dec 24, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2EldOQf" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">"Suffering-oriented programming" and future of Valhala and Java</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 50, Issue 021 (Dec 16, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2s4BMfL" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">New Superfast Garbage Collectors</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 49, Issue 020 (Dec 9, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2DAkfhZ" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">The Bus Ticket Theory of Genius</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 48, Issue 019 (Dec 2, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/33mkXtK" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">ExploratoryTesting by Martin Fowler</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 47, Issue 018 (Nov 28, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2JZHZ2L" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Devoxx Ukraine</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 45, Issue 017 (Nov 9, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2CrrXKZ" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Java Magazine</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 44, Issue 016 (Nov 3, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2PonXSQ" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">The Meta of Meta Learning and a First Look at Java Inline Classes</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 43, Issue 015 (Oct 27, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2oH6xpA" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">How Can We Develop Transformative Tools For Thought?</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 41, Issue 014 (Oct 14, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/31TxEvY" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Efficient enterprise testing</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 40, Issue 013 (Oct 07, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2mBRg8x" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Did you forget about "Psychology of Code Readability"?</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 39, Issue 012 (Sep 30, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2kZhFfH" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Do you know "How to Become A Bad Developer"?</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 38, Issue 011 (Sep 23, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2mbxgZR" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">"How to Be a Good Senior Developer"</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 37, Issue 010 (Sep 16, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2kdiuBp" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Laptop stickers and Java 11 candidates</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 36, Issue 009 (Sep 9, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2m0XQ8d" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">"The sooner you start to code, the longer the program will take."</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 35, Issue 008 (Sep 2, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2HeCSdo" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">"Think Twice Before Using Java 8 Parallel Streams"</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 33, Issue 007 (Aug 12, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2MWswmo" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">"Book recommendation"</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 32, Issue 006 (Aug 5, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/javaweekly31" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">"The Marks of a True Senior Developer"</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 31, Issue 005 (Jul 29, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2XJIVRu" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">"Samurai Duke and the Legend of OpenJDK"</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 29, Issue 004 (Jul 22, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2YTPWf6" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Useful articles and one joke</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 28, Issue 003 (Jul 15, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2XjNzpi" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">g(old)</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 27, Issue 002 (Jul 8, 2019)</span>
+                </a>
+                <a class="link-item" href="http://bit.ly/2J4Urg6" target="_blank" rel="noopener">
+                    <span style="color: var(--text-primary);">Pilot</span> <span style="font-weight: 300; font-size: 0.9em; color: var(--text-secondary);">— Week 26, Issue 001 (Jul 1, 2019)</span>
+                </a>
+            </div>
+            
+             <div style="margin-top: 30px; text-align: center;">
+                 <a href="newsletter.html" class="cta-button" style="text-decoration: none; display: inline-flex;">
+                    <svg class="icon-svg" style="width: 20px; height: 20px; margin-right: 8px;"><use href="#icon-arrow-left"></use></svg>
+                    Back to 2020
+                 </a>
+            </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <h6 class="copyright">
+          © <script>document.write(new Date().getFullYear())</script> Oleksandr Stefanovskyi
+        </h6>
+      </footer>
     </div>
-</nav>
 
-<div class="container">
-    <article>
-        <h1>Java Software Engineer's newsletter</h1>
-        <p>
-            <a href="http://bit.ly/39nErSX">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>Java 14</strong> - week 52, Issue 023
-            </a>
-            <br>
-            <small class="text-secondary">Dec 30, 2019</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2ELhP0y">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>Books recommendations</strong> - week 51, Issue 022
-            </a>
-            <br>
-            <small class="text-secondary">Dec 24, 2019</small>
-        </p>
+    <!-- Scripts -->
+    <script src="../../js/performance.js" defer></script>
 
-        <p>
-            <a href="http://bit.ly/2EldOQf">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>"Suffering-oriented programming" and  future of Valhala and Java </strong> - week 50, Issue 021
-            </a>
-            <br>
-            <small class="text-secondary">Dec 16, 2019</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2s4BMfL">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>New Superfast Garbage Collectors </strong> - week 49, Issue 020
-            </a>
-            <br>
-            <small class="text-secondary">Dec 9, 2019</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2DAkfhZ">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>The Bus Ticket Theory of Genius</strong> - week 48, Issue 019
-            </a>
-            <br>
-            <small class="text-secondary">Dec 2, 2019</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/33mkXtK">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>ExploratoryTesting by Martin Fowler</strong> - week 47, Issue 018
-            </a>
-            <br>
-            <small class="text-secondary">Nov 28, 2019</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2JZHZ2L">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>Devoxx Ukraine</strong> - week 45, Issue 017
-            </a>
-            <br>
-            <small class="text-secondary">Nov 9, 2019</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2CrrXKZ">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>Java Magazine</strong> - week 44, Issue 016
-            </a>
-            <br>
-            <small class="text-secondary">Nov 3, 2019</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2PonXSQ">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>The Meta of Meta Learning and a First Look at Java Inline Classes</strong> - week 43, Issue 015
-            </a>
-            <br>
-            <small class="text-secondary">Oct 27, 2019</small>
-        </p>
-        <p>
-            <a href="http://bit.ly/2oH6xpA">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>How Can We Develop Transformative Tools For Thought?</strong> - week 41, Issue 014
-            </a>
-            <br>
-            <small class="text-secondary">Oct 14, 2019</small>
-        </p>
+    <script defer>
+      // Mobile Menu Toggle
+      const hamburger = document.querySelector(".hamburger-menu");
+      const navMenu = document.querySelector(".nav-menu");
 
-        <p>
-            <a href="http://bit.ly/31TxEvY">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>Efficient enterprise testing</strong> - week 40, Issue 013
-            </a>
-            <br>
-            <small class="text-secondary">Oct 07, 2019</small>
-        </p>
+      if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        });
 
-        <p>
-            <a href="http://bit.ly/2mBRg8x">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>Did you forget about "Psychology of Code Readability"?</strong> - week 39, Issue 012
-            </a>
-            <br>
-            <small class="text-secondary">Sep 30, 2019</small>
-        </p>
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+          if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          }
+        });
 
-        <p>
-            <a href="http://bit.ly/2kZhFfH">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>Do you know "How to Become A Bad Developer"?</strong> - week 38, Issue 011
-            </a>
-            <br>
-            <small class="text-secondary">Sep 23, 2019</small>
-        </p>
-
-        <p>
-            <a href="http://bit.ly/2mbxgZR">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>"How to Be a Good Senior Developer"</strong> - week 37, Issue 010
-            </a>
-            <br>
-            <small class="text-secondary">Sep 16, 2019</small>
-        </p>
-
-        <p>
-            <a href="http://bit.ly/2kdiuBp">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>Laptop stickers and Java 11 candidates</strong> - week 36, Issue 009
-            </a>
-            <br>
-            <small class="text-secondary">Sep 9, 2019</small>
-        </p>
-
-        <p>
-            <a href="http://bit.ly/2m0XQ8d">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>"The sooner you start to code, the longer the program will take."</strong> - week 35, Issue 008
-            </a>
-            <br>
-            <small class="text-secondary">Sep 2, 2019</small>
-        </p>
-
-        <p>
-            <a href="http://bit.ly/2HeCSdo">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>"Think Twice Before Using Java 8 Parallel Streams"</strong> - week 33, Issue 007
-            </a>
-            <br>
-            <small class="text-secondary">Aug 12, 2019</small>
-        </p>
-
-        <p>
-            <a href="http://bit.ly/2MWswmo">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>"Book recommendation"</strong> - week 32, Issue 006
-            </a>
-            <br>
-            <small class="text-secondary">Aug 5, 2019</small>
-        </p>
-
-        <p>
-            <a href="http://bit.ly/javaweekly31">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>"The Marks of a True Senior Developer"</strong> - week 31, Issue 005
-            </a>
-            <br>
-            <small class="text-secondary">Jul 29, 2019</small>
-        </p>
-
-        <p>
-            <a href="http://bit.ly/2XJIVRu">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>"Samurai Duke and the Legend of OpenJDK"</strong> - week 29, Issue 004
-            </a>
-            <br>
-            <small class="text-secondary">Jul 22, 2019</small>
-        </p>
-
-        <p>
-            <a href="http://bit.ly/2YTPWf6">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>Useful articles and one joke</strong> - week 28, Issue 003
-            </a>
-            <br>
-            <small class="text-secondary">Jul 15, 2019</small>
-        </p>
-
-        <p>
-            <a href="http://bit.ly/2XjNzpi">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>g(old)</strong> - week 27, Issue 002
-            </a>
-            <br>
-            <small class="text-secondary">Jul 8, 2019</small>
-        </p>
-
-        <p>
-            <a href="http://bit.ly/2J4Urg6">
-                <em class="fas fa-globe-europe issue-2019"></em>
-                <strong>Pilot</strong> - week 26, Issue 001
-            </a>
-            <br>
-            <small class="text-secondary">Jul 1, 2019</small>
-        </p>
-
-    </article>
-</div>
-<footer class="footer">
-    <h6 class="text-center copyright">© 2020. Oleksandr Stefanovskyi</h6>
-</footer>
-
-<script>
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
-</body>
+        // Close menu when clicking a link
+        navMenu.querySelectorAll("a, button").forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+          });
+        });
+      }
+    </script>
+  </body>
 </html>

@@ -98,7 +98,7 @@ body {
 
 h1.author {
   font-family: var(--font-serif);
-  font-size: clamp(1.85rem, 6.5vw, 3rem);
+  font-size: clamp(1.55rem, 6.8vw, 3rem);
   font-weight: 700;
   color: var(--text-primary);
   margin: 0 0 12px 0;
@@ -864,48 +864,53 @@ h3.intro {
   }
 
   .container {
-    padding: 112px 18px calc(40px + env(safe-area-inset-bottom));
+    padding: 112px 18px calc(32px + env(safe-area-inset-bottom));
   }
 
   /* Tighten hero rhythm so everything above #reviews fits the first viewport */
   .hero {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .headshot {
-    width: 112px;
-    height: 112px;
-    margin-bottom: 16px;
+    width: 96px;
+    height: 96px;
+    margin-bottom: 12px;
     border-width: 3px;
   }
 
   h1.author {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
+    line-height: 1.15;
   }
 
   h3.intro {
-    margin-bottom: 16px;
+    margin: 0 0 14px 0;
   }
 
   .description {
-    margin-bottom: 24px;
-    line-height: 1.55;
+    margin-bottom: 18px;
+    line-height: 1.5;
   }
 
   .cta-section {
-    margin: 20px 0;
-    gap: 18px;
+    margin: 14px 0;
+    gap: 14px;
   }
 
   .cta-button {
-    padding: 14px 28px;
-    font-size: 1.05rem;
-    min-height: 48px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    min-height: 46px;
   }
 
   .social-links {
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .social-links a {
+    padding: 8px;
   }
 
   .social-links .icon-svg {
@@ -914,10 +919,11 @@ h3.intro {
   }
 
   .navbar {
-    width: 90%;
-    top: 20px;
-    padding: 12px 20px;
+    width: calc(100% - 24px);
+    top: 12px;
+    padding: 10px 16px;
     flex-wrap: wrap; /* Allow wrapping for the menu */
+    box-sizing: border-box;
   }
 
   .brand-text {
@@ -1027,20 +1033,19 @@ h3.intro {
     padding: 10px 15px;
   }
 
-  .nav-cta-button span {
-    display: none; /* Hide "Schedule Call" text on very small screens */
-  }
-
   .nav-cta-button {
     padding: 8px;
     border-radius: 50%;
     width: 36px;
     height: 36px;
     justify-content: center;
+    font-size: 0; /* Hide the "Schedule Call" text node (no span to target) */
   }
 
   .nav-cta-button .icon-svg {
     margin: 0;
+    width: 16px;
+    height: 16px;
   }
 
   .hamburger-menu {
@@ -1048,19 +1053,80 @@ h3.intro {
   }
 
   /* Extra hero polish for very narrow phones */
-  .headshot {
-    width: 96px;
-    height: 96px;
-    margin-bottom: 14px;
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
-  .description {
-    font-size: 0.95rem;
+  .headshot {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 10px;
   }
 
   .cta-button {
     width: 100%;
     max-width: 320px;
     justify-content: center;
+  }
+}
+
+/* Short-viewport phones (iPhone SE, Galaxy S8 / S22, similar).
+   Aggressively tighten so everything above #reviews fits ~640px+. */
+@media (max-width: 768px) and (max-height: 780px) {
+  .hero {
+    margin-bottom: 20px;
+  }
+
+  .headshot {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    border-width: 2px;
+  }
+
+  h1.author {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    margin-bottom: 2px;
+  }
+
+  h3.intro {
+    font-size: clamp(0.85rem, 2.8vw, 1.1rem);
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+
+  .cta-section {
+    margin: 10px 0;
+    gap: 10px;
+  }
+
+  .typewriter-container {
+    font-size: clamp(1.1rem, 4.8vw, 1.6rem);
+  }
+
+  .cta-button {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    min-height: 44px;
+  }
+
+  .social-links {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .social-links a {
+    padding: 6px;
+  }
+
+  .social-links .icon-svg {
+    width: 22px;
+    height: 22px;
   }
 }

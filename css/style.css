@@ -98,7 +98,7 @@ body {
 
 h1.author {
   font-family: var(--font-serif);
-  font-size: 3rem;
+  font-size: clamp(1.85rem, 6.5vw, 3rem);
   font-weight: 700;
   color: var(--text-primary);
   margin: 0 0 12px 0;
@@ -107,15 +107,15 @@ h1.author {
 
 h3.intro {
   font-family: var(--font-main);
-  font-size: 1.25rem;
+  font-size: clamp(0.95rem, 3vw, 1.25rem);
   font-weight: 500;
   color: var(--accent-light);
   margin: 0 0 30px 0;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 .description {
-  font-size: 1.125rem;
+  font-size: clamp(0.95rem, 3.4vw, 1.125rem);
   color: var(--text-secondary);
   max-width: 680px;
   margin: 0 auto 40px auto;
@@ -138,7 +138,7 @@ h3.intro {
 
 .typewriter-container {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 5.2vw, 2rem);
   font-weight: 300;
   color: var(--text-primary);
   min-height: 1.5em; /* Prevent layout shift */
@@ -858,9 +858,59 @@ h3.intro {
 }
 
 @media (max-width: 768px) {
-  /* Fix sticky header overlap */
+  /* Reclaim top space: container padding alone handles navbar clearance */
   body {
-    padding-top: 80px;
+    padding-top: 0;
+  }
+
+  .container {
+    padding: 112px 18px calc(40px + env(safe-area-inset-bottom));
+  }
+
+  /* Tighten hero rhythm so everything above #reviews fits the first viewport */
+  .hero {
+    margin-bottom: 40px;
+  }
+
+  .headshot {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 16px;
+    border-width: 3px;
+  }
+
+  h1.author {
+    margin-bottom: 6px;
+  }
+
+  h3.intro {
+    margin-bottom: 16px;
+  }
+
+  .description {
+    margin-bottom: 24px;
+    line-height: 1.55;
+  }
+
+  .cta-section {
+    margin: 20px 0;
+    gap: 18px;
+  }
+
+  .cta-button {
+    padding: 14px 28px;
+    font-size: 1.05rem;
+    min-height: 48px;
+  }
+
+  .social-links {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .social-links .icon-svg {
+    width: 24px;
+    height: 24px;
   }
 
   .navbar {
@@ -995,5 +1045,22 @@ h3.intro {
 
   .hamburger-menu {
     margin-left: 10px;
+  }
+
+  /* Extra hero polish for very narrow phones */
+  .headshot {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 14px;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
   }
 }

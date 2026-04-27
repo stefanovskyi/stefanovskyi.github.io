@@ -529,6 +529,10 @@ h3.intro {
   margin-right: 20px;
 }
 
+.nav-brand a {
+  text-decoration: none;
+}
+
 .brand-text {
   font-weight: 900;
   font-size: 1.2rem;

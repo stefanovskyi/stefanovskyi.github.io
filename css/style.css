@@ -921,28 +921,24 @@ h3.intro {
   .navbar {
     width: calc(100% - 24px);
     top: 12px;
-    padding: 10px 16px;
-    flex-wrap: wrap; /* Allow wrapping for the menu */
+    padding: 8px 12px 8px 16px;
     box-sizing: border-box;
   }
 
   .brand-text {
     font-size: 1.1rem;
-    margin-right: auto; /* Push brand to the left */
-    display: block; /* Keep visible */
+    display: block;
   }
 
-  /* Show hamburger */
+  /* Show hamburger — placed before brand on mobile */
   .hamburger-menu {
     display: block;
-    order: 2; /* Place after brand */
-    margin-left: 10px;
+    order: -1;
+    margin-right: 8px;
   }
 
   .nav-actions {
     margin-left: auto;
-    margin-right: 10px;
-    order: 1; /* Place between brand and hamburger */
   }
 
   /* CTA Button on Mobile */
@@ -956,22 +952,26 @@ h3.intro {
     height: 12px;
   }
 
-  /* Mobile Menu */
+  /* Mobile Menu — dropdown panel below the navbar pill */
   .nav-menu {
     display: none;
-    width: 100%;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
     flex-direction: column;
-    align-items: flex-start;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-subtle);
-    margin-top: 10px;
-    order: 3; /* Navigation drops to new line */
-    gap: 0;
+    align-items: stretch;
+    padding: 8px;
+    gap: 2px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
   }
 
   .nav-menu.active {
     display: flex;
-    animation: slideDown 0.3s ease-out;
+    animation: slideDown 0.2s ease-out;
   }
 
   @keyframes slideDown {

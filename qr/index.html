@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Scan to connect with Oleksandr Stefanovskyi." />
+    <title>Scan to connect · Oleksandr Stefanovskyi</title>
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      :root {
+        color-scheme: dark;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: #000;
+        color: #f8fafc;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+      }
+      main {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: calc(24px + env(safe-area-inset-top)) 20px
+          calc(24px + env(safe-area-inset-bottom));
+        text-align: center;
+      }
+      .qr-link {
+        display: block;
+        text-decoration: none;
+        border-radius: 28px;
+        outline: none;
+        transition: transform 0.12s ease;
+      }
+      .qr-link:active {
+        transform: scale(0.98);
+      }
+      .qr-link:focus-visible {
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
+      }
+      .qr-card {
+        width: min(80vmin, 440px);
+        aspect-ratio: 1 / 1;
+        background: #fff;
+        border-radius: 24px;
+        padding: 20px;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06),
+          0 24px 60px -20px rgba(0, 0, 0, 0.9);
+      }
+      .qr {
+        width: 100%;
+        height: 100%;
+      }
+      .qr svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .label {
+        margin: 0;
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: #cbd5e1;
+      }
+      .caption {
+        margin: 0;
+        font-size: 0.85rem;
+        color: #94a3b8;
+      }
+      .hint {
+        margin: 0;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #475569;
+      }
+      /* Event selector */
+      .events {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: min(80vmin, 440px);
+      }
+      .event-btn {
+        appearance: none;
+        -webkit-appearance: none;
+        font: inherit;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #cbd5e1;
+        background: #141417;
+        border: 1px solid #2a2a2e;
+        border-radius: 9999px;
+        padding: 9px 15px;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: background 0.15s ease, color 0.15s ease,
+          border-color 0.15s ease, transform 0.08s ease;
+      }
+      .event-btn:active {
+        transform: scale(0.96);
+      }
+      .event-btn:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
+      }
+      .event-btn[aria-pressed="true"] {
+        background: #fff;
+        color: #000;
+        border-color: #fff;
+      }
+      /* Intelliarts brand cue on the active RAISE button */
+      .event-btn[data-variant="raise"][aria-pressed="true"] {
+        background: #ff5800;
+        color: #fff;
+        border-color: #ff5800;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="events" role="group" aria-label="Choose event">
+        <button class="event-btn" type="button" data-variant="general" aria-pressed="true">General</button>
+        <button class="event-btn" type="button" data-variant="raise" aria-pressed="false">RAISE Summit</button>
+      </div>
+      <a
+        id="canvas"
+        class="qr-link"
+        href="https://stefanovskyi.com/contact/"
+        aria-label="Open contact page for Oleksandr Stefanovskyi"
+      >
+        <div class="qr-card">
+          <div class="qr" data-variant="general"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h37v37H0z"/><path stroke="#000000" d="M4 4.5h7m3 0h3m1 0h1m2 0h3m2 0h7M4 5.5h1m5 0h1m1 0h1m1 0h2m1 0h1m4 0h3m1 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m3 0h2m3 0h1m3 0h2m1 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m2 0h1m3 0h1m2 0h1m1 0h2m2 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m1 0h6m2 0h4m2 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m5 0h1m1 0h6m2 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M14 11.5h2m3 0h1m1 0h2m1 0h1M4 12.5h1m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m3 0h5m3 0h1m2 0h1M6 13.5h1m1 0h2m1 0h1m2 0h1m1 0h2m1 0h2m4 0h2m2 0h1m2 0h1M6 14.5h1m3 0h2m1 0h2m1 0h1m1 0h4m4 0h1m3 0h3M4 15.5h1m1 0h1m1 0h2m1 0h1m1 0h2m2 0h2m1 0h4m7 0h1M7 16.5h1m2 0h1m1 0h2m1 0h1m2 0h4m1 0h4m2 0h1m1 0h2M4 17.5h5m4 0h2m1 0h1m1 0h2m1 0h1m2 0h3m2 0h1m2 0h1M4 18.5h1m3 0h1m1 0h1m3 0h1m2 0h1m3 0h2m2 0h1m1 0h3m1 0h2M5 19.5h3m4 0h5m3 0h4m1 0h2m2 0h1m1 0h1M5 20.5h1m2 0h4m4 0h1m2 0h3m1 0h1m1 0h2m2 0h1m1 0h2M6 21.5h2m4 0h6m6 0h3m2 0h2m1 0h1M4 22.5h1m2 0h1m2 0h3m2 0h1m2 0h1m1 0h2m3 0h1m2 0h1m2 0h2M5 23.5h2m1 0h1m2 0h3m2 0h7m3 0h1m2 0h1m1 0h1M4 24.5h1m1 0h2m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h6M12 25.5h1m3 0h1m1 0h1m1 0h1m2 0h2m3 0h1m1 0h3M4 26.5h7m2 0h2m2 0h1m3 0h1m1 0h2m1 0h1m1 0h2m1 0h2M4 27.5h1m5 0h1m2 0h3m5 0h1m2 0h1m3 0h2M4 28.5h1m1 0h3m1 0h1m1 0h3m5 0h2m2 0h5m3 0h1M4 29.5h1m1 0h3m1 0h1m2 0h1m3 0h1m2 0h3m1 0h1m3 0h1m1 0h3M4 30.5h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m6 0h2m1 0h3m2 0h1M4 31.5h1m5 0h1m4 0h1m3 0h1m1 0h1m2 0h1m3 0h1m2 0h1M4 32.5h7m1 0h1m3 0h2m2 0h2m1 0h2m3 0h2m1 0h2"/></svg></div>
+          <div class="qr" data-variant="raise" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h41v41H0z"/><path stroke="#000000" d="M4 4.5h7m1 0h1m1 0h1m1 0h1m3 0h1m1 0h4m1 0h1m2 0h7M4 5.5h1m5 0h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m2 0h2m1 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m2 0h2m2 0h2m3 0h1m1 0h1m5 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m1 0h1m2 0h1m3 0h1m2 0h2m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m3 0h1m5 0h3m2 0h4m1 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m6 0h1m1 0h3m3 0h1m1 0h1m2 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M12 11.5h5m2 0h5m4 0h1M4 12.5h1m1 0h2m1 0h3m1 0h2m3 0h2m1 0h2m2 0h1m1 0h1m2 0h1m2 0h1m1 0h2M5 13.5h1m5 0h2m1 0h2m1 0h1m2 0h4m3 0h1m2 0h2m1 0h4M7 14.5h1m1 0h3m2 0h1m2 0h1m4 0h1m2 0h3m2 0h4m2 0h1M4 15.5h2m1 0h3m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h1m1 0h7m1 0h1m2 0h1M5 16.5h1m2 0h3m1 0h1m1 0h2m2 0h1m1 0h1m2 0h4m1 0h2m2 0h2m1 0h2M4 17.5h1m1 0h1m2 0h1m1 0h1m2 0h5m5 0h2m1 0h1m3 0h1m2 0h2M6 18.5h2m1 0h2m2 0h1m1 0h1m1 0h1m3 0h5m2 0h1m1 0h5M7 19.5h3m2 0h1m1 0h1m2 0h3m5 0h2m2 0h2m1 0h3M4 20.5h2m1 0h1m1 0h2m2 0h1m2 0h1m1 0h1m3 0h1m1 0h4m1 0h2m1 0h3M5 21.5h4m6 0h1m1 0h3m4 0h1m2 0h2m1 0h1m1 0h2m1 0h2M5 22.5h1m4 0h5m2 0h1m1 0h2m1 0h1m1 0h2m5 0h2m1 0h1M5 23.5h3m4 0h1m2 0h8m1 0h1m1 0h5m1 0h1m3 0h1M4 24.5h2m1 0h1m2 0h1m4 0h3m1 0h2m5 0h1m4 0h1m1 0h2M4 25.5h1m3 0h2m1 0h1m1 0h3m3 0h3m2 0h4m2 0h2m2 0h1m1 0h1M7 26.5h2m1 0h3m1 0h1m1 0h1m1 0h2m1 0h8m1 0h1m3 0h3M5 27.5h4m4 0h1m4 0h2m2 0h1m1 0h1m1 0h2m2 0h1m2 0h1m2 0h1M4 28.5h1m2 0h1m1 0h3m3 0h1m1 0h2m2 0h4m1 0h1m1 0h6m2 0h1M12 29.5h3m1 0h1m2 0h2m2 0h1m1 0h4m3 0h2m1 0h1M4 30.5h7m1 0h2m1 0h2m4 0h5m1 0h2m1 0h1m1 0h1M4 31.5h1m5 0h1m1 0h1m2 0h1m1 0h1m3 0h3m3 0h2m3 0h5M4 32.5h1m1 0h3m1 0h1m2 0h1m2 0h2m2 0h4m2 0h7m1 0h1m1 0h1M4 33.5h1m1 0h3m1 0h1m1 0h2m6 0h2m1 0h1m2 0h1m4 0h1m1 0h1m1 0h2M4 34.5h1m1 0h3m1 0h1m1 0h2m4 0h4m2 0h1m2 0h5m2 0h1M4 35.5h1m5 0h1m5 0h3m2 0h2m1 0h1m1 0h1m1 0h1m2 0h2m3 0h1M4 36.5h7m1 0h1m2 0h1m2 0h1m1 0h4m1 0h1m1 0h1m4 0h3"/></svg></div>
+        </div>
+      </a>
+      <p class="label" id="label">General</p>
+      <p class="caption" id="caption">Scan to connect</p>
+      <p class="hint">Tap to open</p>
+    </main>
+
+    <script>
+      (function () {
+        "use strict";
+        var BASE = "https://stefanovskyi.com/contact/";
+        var VARIANTS = {
+          general: { ctx: "", label: "General", caption: "Scan to connect" },
+          raise: {
+            ctx: "raise",
+            label: "RAISE Summit · Paris",
+            caption: "Meet me with Intelliarts"
+          }
+        };
+
+        var qrs = document.querySelectorAll(".qr");
+        var btns = document.querySelectorAll(".event-btn");
+        var canvas = document.getElementById("canvas");
+        var labelEl = document.getElementById("label");
+        var captionEl = document.getElementById("caption");
+        var current = "general";
+
+        function select(variant, track) {
+          if (!Object.prototype.hasOwnProperty.call(VARIANTS, variant))
+            variant = "general";
+          current = variant;
+          var cfg = VARIANTS[variant];
+
+          // Show only the matching QR variant.
+          for (var i = 0; i < qrs.length; i++) {
+            qrs[i].hidden = qrs[i].getAttribute("data-variant") !== variant;
+          }
+          // Point the canvas link at the same destination the QR encodes.
+          canvas.setAttribute("href", cfg.ctx ? BASE + "?ctx=" + cfg.ctx : BASE);
+          labelEl.textContent = cfg.label;
+          captionEl.textContent = cfg.caption;
+          // Reflect the active event in the buttons.
+          for (var j = 0; j < btns.length; j++) {
+            btns[j].setAttribute(
+              "aria-pressed",
+              btns[j].getAttribute("data-variant") === variant ? "true" : "false"
+            );
+          }
+          // Keep the URL in sync so the choice is bookmarkable (no history spam).
+          try {
+            history.replaceState(
+              null,
+              "",
+              variant === "general"
+                ? location.pathname
+                : location.pathname + "?v=" + variant
+            );
+          } catch (e) {}
+          if (track) trackPresented();
+        }
+
+        // Initial selection from ?v= (default general); no tracking yet.
+        select(new URLSearchParams(location.search).get("v") || "general", false);
+
+        for (var b = 0; b < btns.length; b++) {
+          btns[b].addEventListener("click", function (ev) {
+            select(ev.currentTarget.getAttribute("data-variant"), true);
+          });
+        }
+
+        // --- Lightweight, deferred analytics (network fetch only when idle) ---
+        !(function (t, e) {
+          var o, n, p, r;
+          e.__SV ||
+            ((window.posthog = e),
+            (e._i = []),
+            (e.init = function (i, s, a) {
+              function g(t, e) {
+                var o = e.split(".");
+                2 == o.length && ((t = t[o[0]]), (e = o[1]));
+                t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                };
+              }
+              ((p = t.createElement("script")).type = "text/javascript"),
+                (p.crossOrigin = "anonymous"),
+                (p.async = !0),
+                (p.src =
+                  s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+                  "/static/array.js"),
+                (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                  p,
+                  r
+                );
+              var u = e;
+              for (
+                void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                  u.people = u.people || [],
+                  u.toString = function (t) {
+                    var e = "posthog";
+                    return (
+                      "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                    );
+                  },
+                  u.people.toString = function () {
+                    return u.toString(1) + ".people (stub)";
+                  },
+                  o =
+                    "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(
+                      " "
+                    ),
+                  n = 0;
+                n < o.length;
+                n++
+              )
+                g(u, o[n]);
+              e._i.push([i, s, a]);
+            }),
+            (e.__SV = 1));
+        })(document, window.posthog || []);
+
+        // Defer init + capture to idle/first interaction so the analytics fetch
+        // never competes with first paint on congested networks. capture() is
+        // only defined after init(), so both live inside startPostHog().
+        var started = false;
+        function startPostHog() {
+          if (started) return;
+          started = true;
+          posthog.init("phc_reqt1davQ6bsycTQbnYbqVgWjUviMDr4w4SEfJPWELX", {
+            api_host: "https://eu.i.posthog.com",
+            capture_pageview: true,
+            person_profiles: "identified_only"
+          });
+          posthog.capture("qr_presented", { variant: current });
+        }
+        // Record each event switch; the first call also boots PostHog.
+        function trackPresented() {
+          if (!started) startPostHog();
+          else posthog.capture("qr_presented", { variant: current });
+        }
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(startPostHog, { timeout: 3000 });
+        } else {
+          setTimeout(startPostHog, 2000);
+        }
+      })();
+    </script>
+  </body>
+</html>

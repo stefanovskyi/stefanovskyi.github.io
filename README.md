@@ -1,6 +1,6 @@
 # Oleksandr Stefanovskyi
 
-> **Strategic Technology Partner** specializing in AI, LLMs, and Generative AI
+> **AI Solutions Architect** specializing in AI, LLMs, and Generative AI
 
 [![Website](https://img.shields.io/badge/Website-stefanovskyi.com-blue?style=flat-square)](https://stefanovskyi.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Oleksandr%20Stefanovskyi-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/oleksandr-stefanovskyi)

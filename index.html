@@ -300,32 +300,35 @@
     <div class="container">
       <!-- Hero Section -->
       <header class="hero">
-        <a
-          href="https://linkedin.com/in/oleksandr-stefanovskyi"
-          target="_blank"
-          rel="noopener"
-          aria-label="View Oleksandr Stefanovskyi's LinkedIn profile"
-        >
-          <img
-            src="/img/headshot.webp"
-            alt="Oleksandr Stefanovskyi"
-            class="headshot"
-            loading="lazy"
-            fetchpriority="high"
-          />
-        </a>
-        <h1 class="author">Oleksandr Stefanovskyi</h1>
-        <h3 class="intro">AI Solutions Architect</h3>
-
-        <p class="description">
-          I provide the technical leadership and architectural discipline to
-          turn Generative AI into a business advantage. I combine deep expertise
-          in LLM theory with the operational experience to audit your strategy,
-          establish professional engineering workflows, and deliver reliable
-          MVPs. Companies partner with me to ensure their AI initiatives are
-          technically sound, cost-effective, and focused on driving actual
-          business value.
-        </p>
+        <div class="hero-profile">
+          <a
+            href="https://linkedin.com/in/oleksandr-stefanovskyi"
+            target="_blank"
+            rel="noopener"
+            aria-label="View Oleksandr Stefanovskyi's LinkedIn profile"
+          >
+            <img
+              src="/img/headshot.webp"
+              alt="Oleksandr Stefanovskyi"
+              class="headshot"
+              loading="lazy"
+              fetchpriority="high"
+            />
+          </a>
+          <div class="hero-copy">
+            <p class="section-eyebrow">AI architecture · delivery · enablement</p>
+            <h1 class="author">Oleksandr Stefanovskyi</h1>
+            <h3 class="intro">AI Solutions Architect</h3>
+            <p class="hero-statement">
+              I design reliable AI systems that survive contact with production.
+            </p>
+            <p class="description">
+              I help companies validate AI initiatives, establish professional
+              engineering workflows, and deliver technically sound,
+              cost-effective MVPs focused on real business value.
+            </p>
+          </div>
+        </div>
 
         <div class="cta-section">
           <div class="typewriter-container">
@@ -429,6 +432,7 @@
       <!-- Reviews Section -->
       <section class="reviews-section" id="reviews">
         <div class="reviews-header">
+          <p class="section-eyebrow">Client feedback</p>
           <h2 class="reviews-title">What People Say</h2>
         </div>
 
@@ -706,6 +710,7 @@
       <!-- Services Section -->
       <section class="services-section" id="services">
         <div class="services-header">
+          <p class="section-eyebrow">How I can help</p>
           <h2 class="services-title">Services</h2>
           <p class="services-intro">
             Building reliable AI systems demands more than just development
@@ -794,6 +799,29 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="closing-cta" aria-labelledby="closing-cta-title">
+        <div>
+          <p class="section-eyebrow">Start with clarity</p>
+          <h2 id="closing-cta-title">Have an AI initiative to validate?</h2>
+          <p>
+            Let’s identify the technical risks, the right architecture, and the
+            shortest credible path to production.
+          </p>
+        </div>
+        <a
+          href="https://calendly.com/astefanovskiy/30min"
+          target="_blank"
+          rel="noopener"
+          class="closing-cta-button"
+          onclick="posthog.capture('schedule_call_clicked', { location: 'closing_cta' })"
+        >
+          Schedule a Consultation
+          <svg class="icon-svg" aria-hidden="true">
+            <use href="#icon-calendar"></use>
+          </svg>
+        </a>
       </section>
 
       <footer class="footer">

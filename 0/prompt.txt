@@ -1,0 +1,1 @@
+view the website and fix the font sizes and styles according to the best practices of typography
